@@ -5,10 +5,12 @@
  */
 package com.bmSys.ui;
 
+import com.bmSys.utils.XDate;
 import java.awt.Color;
-import javax.swing.BorderFactory;
+
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
 
 /**
  *
@@ -38,6 +40,8 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
         lblTitle = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        lblDate = new javax.swing.JLabel();
+        lblClock = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         pnlMenu = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -236,29 +240,45 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bmSys/icon/clock.png"))); // NOI18N
         jLabel4.setText("Time:");
 
+        lblDate.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblDate.setForeground(new java.awt.Color(255, 255, 255));
+        lblDate.setText("00/00/0000");
+
+        lblClock.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblClock.setForeground(new java.awt.Color(255, 255, 255));
+        lblClock.setText("00:00:00 CH");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(377, Short.MAX_VALUE)
+                .addContainerGap(367, Short.MAX_VALUE)
+                .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(135, 135, 135)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(113, 113, 113)
+                        .addGap(1, 1, 1)
                         .addComponent(jLabel4)))
-                .addGap(159, 159, 159))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblClock, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(lblDate))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(lblTitle))
+                    .addComponent(lblTitle)
+                    .addComponent(lblClock))
                 .addContainerGap())
         );
 
@@ -603,21 +623,21 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24))
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addComponent(jLabel14)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addComponent(jLabel14))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(29, 29, 29)
                 .addComponent(jLabel14)
                 .addContainerGap(16, Short.MAX_VALUE))
         );
@@ -1685,6 +1705,7 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
         pnlCusList.setBackground(new java.awt.Color(255, 255, 255));
         pnlCusList.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jScrollPane3.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane3.setOpaque(false);
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
@@ -2030,6 +2051,7 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
 
     private void lblLogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLogoutMouseClicked
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_lblLogoutMouseClicked
 
     /**
@@ -2072,6 +2094,8 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         //setResizable(false);
         showPanelMenu(pnlCreateAcc);
+        XDate.showTime(lblDate,"dd/MM/yyyy");
+        XDate.showTime(lblClock,"hh:mm:ss a");
     }
     
     private void showPanelMenu(JPanel pnl) {
@@ -2281,8 +2305,10 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JLabel lblBalanceEnquiry;
+    private javax.swing.JLabel lblClock;
     private javax.swing.JLabel lblCreateAcc;
     private javax.swing.JLabel lblCusList;
+    private javax.swing.JLabel lblDate;
     private javax.swing.JLabel lblDeposit;
     private javax.swing.JLabel lblLogout;
     private javax.swing.JLabel lblTitle;
