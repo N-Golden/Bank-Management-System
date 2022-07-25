@@ -1,3 +1,4 @@
+
 package com.bmSys.utils;
 
 import java.awt.event.ActionEvent;
@@ -40,6 +41,7 @@ public class XDate {
     }
 
     public static void showTime(JLabel lbl, String format) {
+
         new Timer(1000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
@@ -49,5 +51,4 @@ public class XDate {
             }
         }).start();
     }
-
 }

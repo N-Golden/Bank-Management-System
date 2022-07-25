@@ -1,15 +1,16 @@
 
 package com.bmSys.model;
 
-/**
- *
- * @author Admin
- */
+import java.sql.Timestamp;
+import java.util.Date;
+
+
 public class EmployeeModel extends AbstractModel{
        private String username;
        private String password;
        private String email;
        private String linkImg;
+       private Timestamp lastLogin;
 
     public EmployeeModel() {
     }
@@ -44,6 +45,14 @@ public class EmployeeModel extends AbstractModel{
 
     public void setLinkImg(String linkImg) {
         this.linkImg = linkImg;
+    }
+
+    public Date getLastLogin() {
+        return lastLogin;
+    }
+
+    public void setLastLogin(Timestamp lastLogin) {
+        this.lastLogin = lastLogin;
     }
        
        
