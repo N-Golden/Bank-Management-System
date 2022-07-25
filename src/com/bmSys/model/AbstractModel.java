@@ -62,6 +62,4 @@ public class AbstractModel {
         this.ngaySinh = ngaySinh;
     }
 
- 
-    
 }

@@ -10,9 +10,14 @@ public class CustomerDAO extends AbstractDAO<CustomerModel> {
         String sql = "select * from KhachHang";
         return query(sql, new CustomerMapper());
     }
-    
-    public void update(){
-       String sql = "";
-       update(sql);
+
+    public CustomerModel findOne() {
+        String sql = "select TOP 1 * from KhachHang ORDER BY id_KH DESC";
+        return query(sql, new CustomerMapper()).get(0);
+    }
+
+    public void saveOne(CustomerModel model) {
+        String sql = "Insert into KhachHang values(?, ?, ?, ?, ?, ?, ?)";
+        update(sql, model.getId(), model.getHoTen(), model.getDiaChi(), model.getSoDT(), model.isGioiTinh(), model.getNgaySinh(), model.getEmail());
     }
 }

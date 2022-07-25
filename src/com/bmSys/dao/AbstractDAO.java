@@ -21,8 +21,9 @@ public class AbstractDAO<T> {
             Class.forName(driverName);
             return DriverManager.getConnection(url, username, password);
         } catch (ClassNotFoundException | SQLException e) {
-            return null;
+            System.out.print(e);
         }
+        return null;
     }
 
     public List<T> query(String sql, IRowMapper<T> mapper, Object... parameters) {
@@ -41,7 +42,7 @@ public class AbstractDAO<T> {
                 }
                 return results;
             } catch (SQLException e) {
-                e.printStackTrace();
+                System.out.println(e);
             } finally {
                 try {
                     if (conc != null) {
@@ -54,7 +55,7 @@ public class AbstractDAO<T> {
                         rs.close();
                     }
                 } catch (SQLException e) {
-
+                    System.out.println(e);
                 }
             }
 
