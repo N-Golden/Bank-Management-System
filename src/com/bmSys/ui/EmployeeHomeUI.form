@@ -23,7 +23,7 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,-104,0,0,3,-6"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,-72,0,0,4,66"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
@@ -38,7 +38,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="0" width="1020" height="80"/>
+          <AbsoluteConstraints x="0" y="0" width="1090" height="80"/>
         </Constraint>
       </Constraints>
 
@@ -46,15 +46,12 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="367" max="32767" attributes="0"/>
+                  <EmptySpace pref="437" max="32767" attributes="0"/>
                   <Component id="lblTitle" min="-2" pref="311" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel3" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="jLabel4" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -160,14 +157,14 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="630" width="1020" height="50"/>
+          <AbsoluteConstraints x="0" y="650" width="1090" height="50"/>
         </Constraint>
       </Constraints>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="1020" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="1090" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -185,7 +182,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="80" width="200" height="550"/>
+          <AbsoluteConstraints x="0" y="80" width="200" height="570"/>
         </Constraint>
       </Constraints>
 
@@ -427,7 +424,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="200" y="80" width="820" height="550"/>
+          <AbsoluteConstraints x="200" y="80" width="890" height="570"/>
         </Constraint>
       </Constraints>
 
@@ -448,7 +445,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="0" width="820" height="550"/>
+              <AbsoluteConstraints x="0" y="0" width="890" height="570"/>
             </Constraint>
           </Constraints>
 
@@ -456,7 +453,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="50" max="32767" attributes="0"/>
+                      <EmptySpace pref="120" max="32767" attributes="0"/>
                       <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -471,7 +468,7 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="31" max="32767" attributes="0"/>
+                      <EmptySpace pref="51" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="jPanel13" min="-2" max="-2" attributes="0"/>
@@ -529,7 +526,7 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
-                          <Component id="btnSubmit" min="-2" pref="136" max="-2" attributes="0"/>
+                          <Component id="btn_AccCreate_Submit" min="-2" pref="136" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="btnRefresh" min="-2" pref="140" max="-2" attributes="0"/>
                           <EmptySpace pref="105" max="32767" attributes="0"/>
@@ -585,7 +582,7 @@
                           </Group>
                           <EmptySpace pref="29" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="btnSubmit" pref="40" max="32767" attributes="0"/>
+                              <Component id="btn_AccCreate_Submit" pref="40" max="32767" attributes="0"/>
                               <Component id="btnRefresh" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
@@ -751,7 +748,7 @@
                     <Property name="text" type="java.lang.String" value="Email"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="btnSubmit">
+                <Component class="javax.swing.JButton" name="btn_AccCreate_Submit">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="99" red="0" type="rgb"/>
@@ -764,6 +761,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="SUBMIT"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_AccCreate_SubmitActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="btnRefresh">
                   <Properties>
@@ -799,7 +799,7 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                                  <Component id="jLabel13" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="lblAccImg" min="-2" pref="150" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace pref="25" max="32767" attributes="0"/>
@@ -809,7 +809,7 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel13" min="-2" pref="185" max="-2" attributes="0"/>
+                          <Component id="lblAccImg" min="-2" pref="185" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                           <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="16" max="32767" attributes="0"/>
@@ -818,7 +818,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel13">
+                <Component class="javax.swing.JLabel" name="lblAccImg">
                   <Properties>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
@@ -826,6 +826,9 @@
                       </Border>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblAccImgMouseClicked"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel14">
                   <Properties>
@@ -945,7 +948,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="0" width="820" height="550"/>
+              <AbsoluteConstraints x="0" y="0" width="890" height="570"/>
             </Constraint>
           </Constraints>
 
@@ -955,14 +958,14 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
                       <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="116" max="32767" attributes="0"/>
+                      <EmptySpace pref="186" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="67" max="32767" attributes="0"/>
+                      <EmptySpace pref="87" max="32767" attributes="0"/>
                       <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                   </Group>
@@ -1005,8 +1008,10 @@
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="185" max="-2" attributes="0"/>
-                                  <Component id="btnSubmit2" min="-2" pref="143" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
+                                  <Component id="btn_CreateAcc2_Submit" min="-2" pref="143" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                                  <Component id="btn_CreateAcc2_Back" min="-2" pref="143" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace pref="22" max="32767" attributes="0"/>
@@ -1054,7 +1059,10 @@
                               <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                          <Component id="btnSubmit2" min="-2" pref="46" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="btn_CreateAcc2_Submit" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
+                              <Component id="btn_CreateAcc2_Back" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace pref="37" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -1121,7 +1129,7 @@
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="btnSubmit2">
+                <Component class="javax.swing.JButton" name="btn_CreateAcc2_Submit">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="99" red="33" type="rgb"/>
@@ -1191,6 +1199,23 @@
                     <Property name="text" type="java.lang.String" value="Balance"/>
                   </Properties>
                 </Component>
+                <Component class="javax.swing.JButton" name="btn_CreateAcc2_Back">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="99" red="33" type="rgb"/>
+                    </Property>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="12" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="BACK"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_CreateAcc2_BackActionPerformed"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
           </SubComponents>
@@ -1208,7 +1233,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="0" width="820" height="550"/>
+              <AbsoluteConstraints x="0" y="0" width="890" height="570"/>
             </Constraint>
           </Constraints>
 
@@ -1218,7 +1243,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
                       <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="110" max="32767" attributes="0"/>
+                      <EmptySpace pref="180" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1227,7 +1252,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
                       <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="270" max="32767" attributes="0"/>
+                      <EmptySpace pref="290" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1253,7 +1278,7 @@
                                   <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jButton1" min="-2" pref="140" max="-2" attributes="0"/>
+                                  <Component id="btn_Withdraw_Submit" min="-2" pref="140" max="-2" attributes="0"/>
                                   <EmptySpace pref="248" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -1269,7 +1294,7 @@
                               <Component id="jTextField11" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                          <Component id="jButton1" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="btn_Withdraw_Submit" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace pref="40" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -1291,7 +1316,7 @@
                     <Property name="text" type="java.lang.String" value="Enter Account No"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton1">
+                <Component class="javax.swing.JButton" name="btn_Withdraw_Submit">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="99" red="0" type="rgb"/>
@@ -1304,6 +1329,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="SUBMIT"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_Withdraw_SubmitActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -1322,7 +1350,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="0" width="820" height="550"/>
+              <AbsoluteConstraints x="0" y="0" width="890" height="570"/>
             </Constraint>
           </Constraints>
 
@@ -1332,14 +1360,14 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
                       <Component id="jPanel8" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="127" max="32767" attributes="0"/>
+                      <EmptySpace pref="197" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="87" max="32767" attributes="0"/>
+                      <EmptySpace pref="107" max="32767" attributes="0"/>
                       <Component id="jPanel8" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
                   </Group>
@@ -1383,7 +1411,9 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="btnSubmit3" min="-2" pref="143" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="209" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                          <Component id="btn_Withdraw2_Back" min="-2" pref="143" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1421,7 +1451,10 @@
                               <Component id="jTextField17" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                          <Component id="btnSubmit3" min="-2" pref="46" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="btnSubmit3" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
+                              <Component id="btn_Withdraw2_Back" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace pref="42" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -1532,6 +1565,23 @@
                     <Property name="text" type="java.lang.String" value="Balance"/>
                   </Properties>
                 </Component>
+                <Component class="javax.swing.JButton" name="btn_Withdraw2_Back">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="99" red="33" type="rgb"/>
+                    </Property>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="12" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="BACK"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_Withdraw2_BackActionPerformed"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
           </SubComponents>
@@ -1549,7 +1599,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="0" width="-1" height="-1"/>
+              <AbsoluteConstraints x="0" y="0" width="890" height="570"/>
             </Constraint>
           </Constraints>
 
@@ -1559,7 +1609,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
                       <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="110" max="32767" attributes="0"/>
+                      <EmptySpace pref="180" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1568,7 +1618,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
                       <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="270" max="32767" attributes="0"/>
+                      <EmptySpace pref="290" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1594,7 +1644,7 @@
                                   <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jButton2" min="-2" pref="140" max="-2" attributes="0"/>
+                                  <Component id="btn_Deposit_Submit" min="-2" pref="140" max="-2" attributes="0"/>
                                   <EmptySpace pref="248" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -1610,7 +1660,7 @@
                               <Component id="jTextField18" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                          <Component id="jButton2" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="btn_Deposit_Submit" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace pref="40" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -1632,7 +1682,7 @@
                     <Property name="text" type="java.lang.String" value="Enter Account No"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton2">
+                <Component class="javax.swing.JButton" name="btn_Deposit_Submit">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="99" red="0" type="rgb"/>
@@ -1645,6 +1695,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="SUBMIT"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_Deposit_SubmitActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -1663,7 +1716,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="0" width="-1" height="-1"/>
+              <AbsoluteConstraints x="0" y="0" width="890" height="570"/>
             </Constraint>
           </Constraints>
 
@@ -1673,14 +1726,14 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
                       <Component id="jPanel9" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="129" max="32767" attributes="0"/>
+                      <EmptySpace pref="197" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="89" max="32767" attributes="0"/>
+                      <EmptySpace pref="107" max="32767" attributes="0"/>
                       <Component id="jPanel9" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
                   </Group>
@@ -1724,7 +1777,9 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="btnSubmit4" min="-2" pref="143" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="209" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                          <Component id="btn_Deposit2_Back" min="-2" pref="143" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1762,7 +1817,10 @@
                               <Component id="jTextField24" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                          <Component id="btnSubmit4" min="-2" pref="46" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="btnSubmit4" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
+                              <Component id="btn_Deposit2_Back" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace pref="42" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -1873,6 +1931,23 @@
                     <Property name="text" type="java.lang.String" value="Amount"/>
                   </Properties>
                 </Component>
+                <Component class="javax.swing.JButton" name="btn_Deposit2_Back">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="99" red="33" type="rgb"/>
+                    </Property>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="12" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="BACK"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_Deposit2_BackActionPerformed"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
           </SubComponents>
@@ -1890,7 +1965,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="0" width="820" height="550"/>
+              <AbsoluteConstraints x="0" y="0" width="890" height="570"/>
             </Constraint>
           </Constraints>
 
@@ -1930,7 +2005,7 @@
                           <Component id="jButton3" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
                           <Component id="jButton4" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="59" max="32767" attributes="0"/>
+                      <EmptySpace pref="79" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2345,55 +2420,61 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="0" width="820" height="550"/>
+              <AbsoluteConstraints x="0" y="0" width="890" height="570"/>
             </Constraint>
           </Constraints>
 
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jLabel51" max="32767" attributes="0"/>
-                          <Component id="jLabel52" max="32767" attributes="0"/>
-                          <Component id="jLabel56" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jLabel53" max="32767" attributes="0"/>
-                          <Component id="jLabel54" max="32767" attributes="0"/>
-                          <Component id="jDateChooser2" min="-2" pref="178" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel55" max="32767" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel57" min="-2" pref="128" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="18" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jTextField35" min="-2" pref="188" max="-2" attributes="0"/>
-                          <Component id="jDateChooser3" min="-2" pref="188" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                              <Component id="jScrollPane2" min="-2" pref="734" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="jLabel52" max="32767" attributes="0"/>
+                                          <Component id="jLabel56" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel54" alignment="0" pref="340" max="32767" attributes="0"/>
+                                          <Component id="jDateChooser2" min="-2" pref="217" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jLabel51" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="jLabel53" min="-2" pref="178" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jLabel55" min="-2" pref="128" max="-2" attributes="0"/>
+                                  <Component id="jLabel57" min="-2" pref="128" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jTextField35" min="-2" pref="211" max="-2" attributes="0"/>
+                                  <Component id="jDateChooser3" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="221" max="-2" attributes="0"/>
-                              <Component id="jButton6" min="-2" pref="160" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="jScrollPane2" min="-2" pref="772" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
+                              <Component id="btn_Transaction2_Back" min="-2" pref="160" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="jButton7" min="-2" pref="160" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                               <Component id="jPanel15" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2401,48 +2482,49 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jLabel57" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel51" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel53" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel52" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel54" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel55" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField35" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="jDateChooser2" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel56" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jDateChooser3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel51" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel53" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="41" max="32767" attributes="0"/>
-                      <Component id="jScrollPane2" min="-2" pref="166" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel52" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel54" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel55" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextField35" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                              <Component id="jPanel15" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jDateChooser2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel56" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
-                              <Component id="jButton6" min="-2" pref="47" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel57" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jDateChooser3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="26" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                      <Component id="jScrollPane2" min="-2" pref="218" max="-2" attributes="0"/>
+                      <EmptySpace pref="46" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="jPanel15" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="btn_Transaction2_Back" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                                  <Component id="jButton7" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2452,18 +2534,21 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="jTable1">
+                <Component class="javax.swing.JTable" name="tblTransaction">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="12" style="0"/>
+                    </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="8" rowCount="4">
-                        <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 4" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 5" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 6" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 7" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 8" type="java.lang.Object"/>
+                      <Table columnCount="8" rowCount="5">
+                        <Column editable="true" title="TRANS_ID" type="java.lang.Object"/>
+                        <Column editable="true" title="ACC_NO" type="java.lang.Object"/>
+                        <Column editable="true" title="DATED" type="java.lang.Object"/>
+                        <Column editable="true" title="AMOUNT" type="java.lang.Object"/>
+                        <Column editable="true" title="NOTE" type="java.lang.Object"/>
+                        <Column editable="true" title="BENEFICIARY" type="java.lang.Object"/>
+                        <Column editable="true" title="EMPLOYEE_ID" type="java.lang.Object"/>
+                        <Column editable="true" title="TYPE" type="java.lang.Object"/>
                       </Table>
                     </Property>
                   </Properties>
@@ -2527,6 +2612,9 @@
             </Component>
             <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser2">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="12" style="0"/>
                 </Property>
@@ -2542,12 +2630,15 @@
             </Component>
             <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser3">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="12" style="0"/>
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton6">
+            <Component class="javax.swing.JButton" name="btn_Transaction2_Back">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="99" red="33" type="rgb"/>
@@ -2558,8 +2649,11 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="PRINT"/>
+                <Property name="text" type="java.lang.String" value="BACK"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_Transaction2_BackActionPerformed"/>
+              </Events>
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel15">
               <Properties>
@@ -2571,27 +2665,27 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel58" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel59" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel60" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel59" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel58" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel60" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel63" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel62" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel61" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel63" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="83" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="38" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel58" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel61" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -2606,7 +2700,7 @@
                               <Component id="jLabel60" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel63" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="54" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -2662,6 +2756,20 @@
                 </Component>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JButton" name="jButton7">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="99" red="33" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="14" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="PRINT"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="pnlTransaction">
@@ -2677,7 +2785,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="0" width="-1" height="-1"/>
+              <AbsoluteConstraints x="0" y="0" width="890" height="570"/>
             </Constraint>
           </Constraints>
 
@@ -2687,7 +2795,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
                       <Component id="jPanel14" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="112" max="32767" attributes="0"/>
+                      <EmptySpace pref="180" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2696,7 +2804,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
                       <Component id="jPanel14" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="272" max="32767" attributes="0"/>
+                      <EmptySpace pref="290" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2722,7 +2830,7 @@
                                   <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jButton5" min="-2" pref="140" max="-2" attributes="0"/>
+                                  <Component id="btn_Transaction_Submit" min="-2" pref="140" max="-2" attributes="0"/>
                                   <EmptySpace pref="248" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -2738,7 +2846,7 @@
                               <Component id="jTextField30" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                          <Component id="jButton5" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="btn_Transaction_Submit" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace pref="40" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -2760,7 +2868,7 @@
                     <Property name="text" type="java.lang.String" value="Enter Account No"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton5">
+                <Component class="javax.swing.JButton" name="btn_Transaction_Submit">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="99" red="0" type="rgb"/>
@@ -2773,6 +2881,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="SUBMIT"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_Transaction_SubmitActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -2791,7 +2902,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="0" width="820" height="550"/>
+              <AbsoluteConstraints x="0" y="0" width="890" height="570"/>
             </Constraint>
           </Constraints>
 
@@ -2799,18 +2910,18 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
-                      <Component id="jScrollPane3" min="-2" pref="647" max="-2" attributes="0"/>
-                      <EmptySpace pref="94" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                      <Component id="jScrollPane3" min="-2" pref="808" max="-2" attributes="0"/>
+                      <EmptySpace pref="43" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
-                      <Component id="jScrollPane3" min="-2" pref="257" max="-2" attributes="0"/>
-                      <EmptySpace pref="189" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+                      <Component id="jScrollPane3" min="-2" pref="317" max="-2" attributes="0"/>
+                      <EmptySpace pref="175" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2821,22 +2932,93 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="opaque" type="boolean" value="false"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="12" style="0"/>
+                </Property>
               </Properties>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="jTable2">
+                <Component class="javax.swing.JTable" name="tblCustomer">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="12" style="0"/>
+                    </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="4" rowCount="4">
-                        <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                      <Table columnCount="7" rowCount="8">
+                        <Column editable="true" title="ID" type="java.lang.Object">
+                          <Data value="aa"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                        </Column>
+                        <Column editable="true" title="NAME" type="java.lang.Object">
+                          <Data value="aaaaa"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                        </Column>
+                        <Column editable="true" title="ADDRESS" type="java.lang.Object">
+                          <Data value="aaaaaa"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                        </Column>
+                        <Column editable="true" title="PHONE" type="java.lang.Object">
+                          <Data value="aaaaaa"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                        </Column>
+                        <Column editable="true" title="GENDER" type="java.lang.Object">
+                          <Data value="aaaaaa"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                        </Column>
+                        <Column editable="true" title="DOB" type="java.lang.Object">
+                          <Data value="aaaaaa"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                        </Column>
+                        <Column editable="true" title="EMAIL" type="java.lang.Object">
+                          <Data value="aaaaaaa"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                          <Data value="null"/>
+                        </Column>
                       </Table>
                     </Property>
-                    <Property name="opaque" type="boolean" value="false"/>
+                    <Property name="rowHeight" type="int" value="20"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -2856,7 +3038,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="0" width="-1" height="-1"/>
+              <AbsoluteConstraints x="0" y="0" width="890" height="570"/>
             </Constraint>
           </Constraints>
 
@@ -2866,7 +3048,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
                       <Component id="jPanel16" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="112" max="32767" attributes="0"/>
+                      <EmptySpace pref="180" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2875,7 +3057,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
                       <Component id="jPanel16" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="272" max="32767" attributes="0"/>
+                      <EmptySpace pref="290" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2901,7 +3083,7 @@
                                   <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jButton7" min="-2" pref="140" max="-2" attributes="0"/>
+                                  <Component id="btn_BE_Submit" min="-2" pref="140" max="-2" attributes="0"/>
                                   <EmptySpace pref="248" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -2917,7 +3099,7 @@
                               <Component id="jTextField36" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                          <Component id="jButton7" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="btn_BE_Submit" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace pref="40" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -2939,7 +3121,7 @@
                     <Property name="text" type="java.lang.String" value="Enter Account No"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton7">
+                <Component class="javax.swing.JButton" name="btn_BE_Submit">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="99" red="0" type="rgb"/>
@@ -2952,6 +3134,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="SUBMIT"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_BE_SubmitActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -2970,7 +3155,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="0" width="-1" height="-1"/>
+              <AbsoluteConstraints x="0" y="0" width="890" height="570"/>
             </Constraint>
           </Constraints>
 
@@ -2980,14 +3165,14 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
                       <Component id="jPanel17" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="126" max="32767" attributes="0"/>
+                      <EmptySpace pref="194" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="89" max="32767" attributes="0"/>
+                      <EmptySpace pref="107" max="32767" attributes="0"/>
                       <Component id="jPanel17" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
                   </Group>
@@ -3005,33 +3190,38 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel65" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel66" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel67" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel68" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel69" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel70" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jTextField37" alignment="0" pref="304" max="32767" attributes="0"/>
-                                  <Component id="jTextField38" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField39" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField40" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField41" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel65" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel66" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel67" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel68" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel69" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel70" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="jTextField37" alignment="0" pref="304" max="32767" attributes="0"/>
+                                          <Component id="jTextField38" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jTextField39" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jTextField40" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jTextField41" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Component id="jTextField42" alignment="1" min="-2" pref="304" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <Component id="jTextField42" alignment="1" min="-2" pref="304" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
+                                  <Component id="btnSubmit7" min="-2" pref="143" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                                  <Component id="btnSubmit8" min="-2" pref="143" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace pref="22" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="btnSubmit7" min="-2" pref="143" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="209" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -3068,9 +3258,12 @@
                               <Component id="jLabel70" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jTextField42" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                          <Component id="btnSubmit7" min="-2" pref="46" max="-2" attributes="0"/>
-                          <EmptySpace pref="42" max="32767" attributes="0"/>
+                          <EmptySpace pref="44" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="btnSubmit7" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
+                              <Component id="btnSubmit8" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -3179,6 +3372,23 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Balance"/>
                   </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnSubmit8">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="99" red="33" type="rgb"/>
+                    </Property>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="12" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="BACK"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSubmit8ActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>

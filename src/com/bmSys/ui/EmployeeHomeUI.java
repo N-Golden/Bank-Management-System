@@ -6,11 +6,18 @@
 package com.bmSys.ui;
 
 import com.bmSys.utils.XDate;
+import com.bmSys.utils.XImage;
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.io.File;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
 
 /**
  *
@@ -74,10 +81,10 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        btnSubmit = new javax.swing.JButton();
+        btn_AccCreate_Submit = new javax.swing.JButton();
         btnRefresh = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
+        lblAccImg = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jPanel12 = new javax.swing.JPanel();
         jLabel49 = new javax.swing.JLabel();
@@ -93,7 +100,7 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
         jTextField9 = new javax.swing.JTextField();
         jComboBox2 = new javax.swing.JComboBox<>();
         jTextField10 = new javax.swing.JTextField();
-        btnSubmit2 = new javax.swing.JButton();
+        btn_CreateAcc2_Submit = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -101,11 +108,12 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
+        btn_CreateAcc2_Back = new javax.swing.JButton();
         pnlWithdraw = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jTextField11 = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btn_Withdraw_Submit = new javax.swing.JButton();
         pnlWithdraw2 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jTextField12 = new javax.swing.JTextField();
@@ -121,11 +129,12 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
+        btn_Withdraw2_Back = new javax.swing.JButton();
         pnlDeposit = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jTextField18 = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        btn_Deposit_Submit = new javax.swing.JButton();
         pnlDeposit2 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jTextField19 = new javax.swing.JTextField();
@@ -141,6 +150,7 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
+        btn_Deposit2_Back = new javax.swing.JButton();
         pnlTransfer = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         jTextField25 = new javax.swing.JTextField();
@@ -170,7 +180,7 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         pnlTransaction2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblTransaction = new javax.swing.JTable();
         jLabel51 = new javax.swing.JLabel();
         jLabel52 = new javax.swing.JLabel();
         jLabel53 = new javax.swing.JLabel();
@@ -181,7 +191,7 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
         jDateChooser2 = new com.toedter.calendar.JDateChooser();
         jLabel57 = new javax.swing.JLabel();
         jDateChooser3 = new com.toedter.calendar.JDateChooser();
-        jButton6 = new javax.swing.JButton();
+        btn_Transaction2_Back = new javax.swing.JButton();
         jPanel15 = new javax.swing.JPanel();
         jLabel58 = new javax.swing.JLabel();
         jLabel59 = new javax.swing.JLabel();
@@ -189,19 +199,20 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
         jLabel61 = new javax.swing.JLabel();
         jLabel62 = new javax.swing.JLabel();
         jLabel63 = new javax.swing.JLabel();
+        jButton7 = new javax.swing.JButton();
         pnlTransaction = new javax.swing.JPanel();
         jPanel14 = new javax.swing.JPanel();
         jTextField30 = new javax.swing.JTextField();
         jLabel50 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
+        btn_Transaction_Submit = new javax.swing.JButton();
         pnlCusList = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tblCustomer = new javax.swing.JTable();
         pnlBalanceEnquiry = new javax.swing.JPanel();
         jPanel16 = new javax.swing.JPanel();
         jTextField36 = new javax.swing.JTextField();
         jLabel64 = new javax.swing.JLabel();
-        jButton7 = new javax.swing.JButton();
+        btn_BE_Submit = new javax.swing.JButton();
         pnlBalanceEnquiry2 = new javax.swing.JPanel();
         jPanel17 = new javax.swing.JPanel();
         jTextField37 = new javax.swing.JTextField();
@@ -217,6 +228,7 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
         jLabel68 = new javax.swing.JLabel();
         jLabel69 = new javax.swing.JLabel();
         jLabel70 = new javax.swing.JLabel();
+        btnSubmit8 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("HOME");
@@ -253,14 +265,12 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(367, Short.MAX_VALUE)
+                .addContainerGap(437, Short.MAX_VALUE)
                 .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(135, 135, 135)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(jLabel4)))
+                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -282,7 +292,7 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 80));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1090, 80));
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 255));
 
@@ -290,14 +300,14 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1020, Short.MAX_VALUE)
+            .addGap(0, 1090, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 50, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 630, 1020, 50));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 650, 1090, 50));
 
         pnlMenu.setBackground(new java.awt.Color(255, 255, 255));
         pnlMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -459,7 +469,7 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
         });
         pnlMenu.add(lblLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 200, 50));
 
-        getContentPane().add(pnlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 200, 550));
+        getContentPane().add(pnlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 200, 570));
 
         pnlMain.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         pnlMain.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -520,10 +530,15 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel12.setText("Email");
 
-        btnSubmit.setBackground(new java.awt.Color(0, 153, 255));
-        btnSubmit.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnSubmit.setForeground(new java.awt.Color(255, 255, 255));
-        btnSubmit.setText("SUBMIT");
+        btn_AccCreate_Submit.setBackground(new java.awt.Color(0, 153, 255));
+        btn_AccCreate_Submit.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btn_AccCreate_Submit.setForeground(new java.awt.Color(255, 255, 255));
+        btn_AccCreate_Submit.setText("SUBMIT");
+        btn_AccCreate_Submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_AccCreate_SubmitActionPerformed(evt);
+            }
+        });
 
         btnRefresh.setBackground(new java.awt.Color(0, 153, 255));
         btnRefresh.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -561,7 +576,7 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
                 .addGap(30, 30, 30))
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(77, 77, 77)
-                .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_AccCreate_Submit, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(105, Short.MAX_VALUE))
@@ -606,14 +621,19 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
                     .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnSubmit, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                    .addComponent(btn_AccCreate_Submit, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
                     .addComponent(btnRefresh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(24, 24, 24))
         );
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel13.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblAccImg.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblAccImg.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblAccImgMouseClicked(evt);
+            }
+        });
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 0, 0));
@@ -630,13 +650,13 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
                         .addComponent(jLabel14))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(lblAccImg, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblAccImg, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addComponent(jLabel14)
                 .addContainerGap(16, Short.MAX_VALUE))
@@ -697,7 +717,7 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
         pnlCreateAccLayout.setHorizontalGroup(
             pnlCreateAccLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCreateAccLayout.createSequentialGroup()
-                .addContainerGap(50, Short.MAX_VALUE)
+                .addContainerGap(120, Short.MAX_VALUE)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addGroup(pnlCreateAccLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -709,7 +729,7 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
         pnlCreateAccLayout.setVerticalGroup(
             pnlCreateAccLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCreateAccLayout.createSequentialGroup()
-                .addContainerGap(31, Short.MAX_VALUE)
+                .addContainerGap(51, Short.MAX_VALUE)
                 .addGroup(pnlCreateAccLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(pnlCreateAccLayout.createSequentialGroup()
                         .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -721,7 +741,7 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
                 .addGap(30, 30, 30))
         );
 
-        pnlMain.add(pnlCreateAcc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 550));
+        pnlMain.add(pnlCreateAcc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, 570));
 
         pnlCreateAcc2.setBackground(new java.awt.Color(255, 255, 255));
         pnlCreateAcc2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -743,10 +763,10 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
 
         jTextField10.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
-        btnSubmit2.setBackground(new java.awt.Color(51, 153, 255));
-        btnSubmit2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnSubmit2.setForeground(new java.awt.Color(255, 255, 255));
-        btnSubmit2.setText("SUBMIT");
+        btn_CreateAcc2_Submit.setBackground(new java.awt.Color(51, 153, 255));
+        btn_CreateAcc2_Submit.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btn_CreateAcc2_Submit.setForeground(new java.awt.Color(255, 255, 255));
+        btn_CreateAcc2_Submit.setText("SUBMIT");
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel15.setText("Customer ID");
@@ -768,6 +788,16 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel21.setText("Balance");
+
+        btn_CreateAcc2_Back.setBackground(new java.awt.Color(51, 153, 255));
+        btn_CreateAcc2_Back.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btn_CreateAcc2_Back.setForeground(new java.awt.Color(255, 255, 255));
+        btn_CreateAcc2_Back.setText("BACK");
+        btn_CreateAcc2_Back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_CreateAcc2_BackActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -795,8 +825,10 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
                             .addComponent(jComboBox2, 0, 304, Short.MAX_VALUE)
                             .addComponent(jTextField10)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(185, 185, 185)
-                        .addComponent(btnSubmit2, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(135, 135, 135)
+                        .addComponent(btn_CreateAcc2_Submit, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(61, 61, 61)
+                        .addComponent(btn_CreateAcc2_Back, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -832,7 +864,9 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
                         .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel21))
                 .addGap(56, 56, 56)
-                .addComponent(btnSubmit2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_CreateAcc2_Submit, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_CreateAcc2_Back, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(37, Short.MAX_VALUE))
         );
 
@@ -843,17 +877,17 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
             .addGroup(pnlCreateAcc2Layout.createSequentialGroup()
                 .addGap(138, 138, 138)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addContainerGap(186, Short.MAX_VALUE))
         );
         pnlCreateAcc2Layout.setVerticalGroup(
             pnlCreateAcc2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCreateAcc2Layout.createSequentialGroup()
-                .addContainerGap(67, Short.MAX_VALUE)
+                .addContainerGap(87, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(55, 55, 55))
         );
 
-        pnlMain.add(pnlCreateAcc2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 550));
+        pnlMain.add(pnlCreateAcc2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, 570));
 
         pnlWithdraw.setBackground(new java.awt.Color(255, 255, 255));
         pnlWithdraw.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -865,10 +899,15 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
         jLabel22.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel22.setText("Enter Account No");
 
-        jButton1.setBackground(new java.awt.Color(0, 153, 255));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("SUBMIT");
+        btn_Withdraw_Submit.setBackground(new java.awt.Color(0, 153, 255));
+        btn_Withdraw_Submit.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_Withdraw_Submit.setForeground(new java.awt.Color(255, 255, 255));
+        btn_Withdraw_Submit.setText("SUBMIT");
+        btn_Withdraw_Submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_Withdraw_SubmitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -883,7 +922,7 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
                         .addComponent(jTextField11)
                         .addGap(43, 43, 43))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_Withdraw_Submit, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(248, Short.MAX_VALUE))))
         );
         jPanel5Layout.setVerticalGroup(
@@ -894,7 +933,7 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
                     .addComponent(jLabel22)
                     .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_Withdraw_Submit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
@@ -905,17 +944,17 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
             .addGroup(pnlWithdrawLayout.createSequentialGroup()
                 .addGap(88, 88, 88)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(110, Short.MAX_VALUE))
+                .addContainerGap(180, Short.MAX_VALUE))
         );
         pnlWithdrawLayout.setVerticalGroup(
             pnlWithdrawLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlWithdrawLayout.createSequentialGroup()
                 .addGap(105, 105, 105)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(270, Short.MAX_VALUE))
+                .addContainerGap(290, Short.MAX_VALUE))
         );
 
-        pnlMain.add(pnlWithdraw, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 550));
+        pnlMain.add(pnlWithdraw, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, 570));
 
         pnlWithdraw2.setBackground(new java.awt.Color(255, 255, 255));
         pnlWithdraw2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -957,6 +996,16 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
         jLabel28.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel28.setText("Balance");
 
+        btn_Withdraw2_Back.setBackground(new java.awt.Color(51, 153, 255));
+        btn_Withdraw2_Back.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btn_Withdraw2_Back.setForeground(new java.awt.Color(255, 255, 255));
+        btn_Withdraw2_Back.setText("BACK");
+        btn_Withdraw2_Back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_Withdraw2_BackActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
@@ -983,7 +1032,9 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnSubmit3, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(209, 209, 209))
+                .addGap(55, 55, 55)
+                .addComponent(btn_Withdraw2_Back, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(95, 95, 95))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1013,7 +1064,9 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
                     .addComponent(jLabel28)
                     .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(43, 43, 43)
-                .addComponent(btnSubmit3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSubmit3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_Withdraw2_Back, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(42, Short.MAX_VALUE))
         );
 
@@ -1024,17 +1077,17 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
             .addGroup(pnlWithdraw2Layout.createSequentialGroup()
                 .addGap(127, 127, 127)
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addContainerGap(197, Short.MAX_VALUE))
         );
         pnlWithdraw2Layout.setVerticalGroup(
             pnlWithdraw2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlWithdraw2Layout.createSequentialGroup()
-                .addContainerGap(87, Short.MAX_VALUE)
+                .addContainerGap(107, Short.MAX_VALUE)
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(84, 84, 84))
         );
 
-        pnlMain.add(pnlWithdraw2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 550));
+        pnlMain.add(pnlWithdraw2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, 570));
 
         pnlDeposit.setBackground(new java.awt.Color(255, 255, 255));
         pnlDeposit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -1046,10 +1099,15 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
         jLabel29.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel29.setText("Enter Account No");
 
-        jButton2.setBackground(new java.awt.Color(0, 153, 255));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("SUBMIT");
+        btn_Deposit_Submit.setBackground(new java.awt.Color(0, 153, 255));
+        btn_Deposit_Submit.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_Deposit_Submit.setForeground(new java.awt.Color(255, 255, 255));
+        btn_Deposit_Submit.setText("SUBMIT");
+        btn_Deposit_Submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_Deposit_SubmitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -1064,7 +1122,7 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
                         .addComponent(jTextField18)
                         .addGap(43, 43, 43))
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_Deposit_Submit, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(248, Short.MAX_VALUE))))
         );
         jPanel7Layout.setVerticalGroup(
@@ -1075,7 +1133,7 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
                     .addComponent(jLabel29)
                     .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_Deposit_Submit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
@@ -1086,17 +1144,17 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
             .addGroup(pnlDepositLayout.createSequentialGroup()
                 .addGap(88, 88, 88)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(110, Short.MAX_VALUE))
+                .addContainerGap(180, Short.MAX_VALUE))
         );
         pnlDepositLayout.setVerticalGroup(
             pnlDepositLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlDepositLayout.createSequentialGroup()
                 .addGap(105, 105, 105)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(270, Short.MAX_VALUE))
+                .addContainerGap(290, Short.MAX_VALUE))
         );
 
-        pnlMain.add(pnlDeposit, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        pnlMain.add(pnlDeposit, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, 570));
 
         pnlDeposit2.setBackground(new java.awt.Color(255, 255, 255));
         pnlDeposit2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -1138,6 +1196,16 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
         jLabel35.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel35.setText("Amount");
 
+        btn_Deposit2_Back.setBackground(new java.awt.Color(51, 153, 255));
+        btn_Deposit2_Back.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btn_Deposit2_Back.setForeground(new java.awt.Color(255, 255, 255));
+        btn_Deposit2_Back.setText("BACK");
+        btn_Deposit2_Back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_Deposit2_BackActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
@@ -1164,7 +1232,9 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnSubmit4, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(209, 209, 209))
+                .addGap(58, 58, 58)
+                .addComponent(btn_Deposit2_Back, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(85, 85, 85))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1194,7 +1264,9 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
                     .addComponent(jLabel35)
                     .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(43, 43, 43)
-                .addComponent(btnSubmit4, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSubmit4, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_Deposit2_Back, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(42, Short.MAX_VALUE))
         );
 
@@ -1205,17 +1277,17 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
             .addGroup(pnlDeposit2Layout.createSequentialGroup()
                 .addGap(127, 127, 127)
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(129, Short.MAX_VALUE))
+                .addContainerGap(197, Short.MAX_VALUE))
         );
         pnlDeposit2Layout.setVerticalGroup(
             pnlDeposit2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDeposit2Layout.createSequentialGroup()
-                .addContainerGap(89, Short.MAX_VALUE)
+                .addContainerGap(107, Short.MAX_VALUE)
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(84, 84, 84))
         );
 
-        pnlMain.add(pnlDeposit2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        pnlMain.add(pnlDeposit2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, 570));
 
         pnlTransfer.setBackground(new java.awt.Color(255, 255, 255));
         pnlTransfer.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -1455,26 +1527,28 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
                 .addGroup(pnlTransferLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
 
-        pnlMain.add(pnlTransfer, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 550));
+        pnlMain.add(pnlTransfer, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, 570));
 
         pnlTransaction2.setBackground(new java.awt.Color(255, 255, 255));
         pnlTransaction2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblTransaction.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        tblTransaction.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8"
+                "TRANS_ID", "ACC_NO", "DATED", "AMOUNT", "NOTE", "BENEFICIARY", "EMPLOYEE_ID", "TYPE"
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(tblTransaction);
 
         jLabel51.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel51.setText("Account No:");
@@ -1496,17 +1570,24 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
         jLabel56.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel56.setText("Start Date:");
 
+        jDateChooser2.setBackground(new java.awt.Color(255, 255, 255));
         jDateChooser2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
         jLabel57.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel57.setText("End Date:");
 
+        jDateChooser3.setBackground(new java.awt.Color(255, 255, 255));
         jDateChooser3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
-        jButton6.setBackground(new java.awt.Color(51, 153, 255));
-        jButton6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setText("PRINT");
+        btn_Transaction2_Back.setBackground(new java.awt.Color(51, 153, 255));
+        btn_Transaction2_Back.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_Transaction2_Back.setForeground(new java.awt.Color(255, 255, 255));
+        btn_Transaction2_Back.setText("BACK");
+        btn_Transaction2_Back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_Transaction2_BackActionPerformed(evt);
+            }
+        });
 
         jPanel15.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1532,23 +1613,23 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
         jPanel15.setLayout(jPanel15Layout);
         jPanel15Layout.setHorizontalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel15Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
+                .addGap(42, 42, 42)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel58)
                     .addComponent(jLabel59)
+                    .addComponent(jLabel58)
                     .addComponent(jLabel60))
-                .addGap(44, 44, 44)
+                .addGap(47, 47, 47)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel63)
                     .addComponent(jLabel62)
-                    .addComponent(jLabel61))
-                .addContainerGap(83, Short.MAX_VALUE))
+                    .addComponent(jLabel61)
+                    .addComponent(jLabel63))
+                .addGap(0, 38, Short.MAX_VALUE))
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel15Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addContainerGap()
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel58)
                     .addComponent(jLabel61))
@@ -1560,85 +1641,95 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel60)
                     .addComponent(jLabel63))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jButton7.setBackground(new java.awt.Color(51, 153, 255));
+        jButton7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton7.setForeground(new java.awt.Color(255, 255, 255));
+        jButton7.setText("PRINT");
 
         javax.swing.GroupLayout pnlTransaction2Layout = new javax.swing.GroupLayout(pnlTransaction2);
         pnlTransaction2.setLayout(pnlTransaction2Layout);
         pnlTransaction2Layout.setHorizontalGroup(
             pnlTransaction2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlTransaction2Layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addGroup(pnlTransaction2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel51, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel52, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(pnlTransaction2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel53, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel54, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(51, 51, 51)
-                .addGroup(pnlTransaction2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel55, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTransaction2Layout.createSequentialGroup()
+                .addGroup(pnlTransaction2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(pnlTransaction2Layout.createSequentialGroup()
-                        .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 18, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlTransaction2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField35, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jDateChooser3, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(111, 111, 111))
-            .addGroup(pnlTransaction2Layout.createSequentialGroup()
-                .addGroup(pnlTransaction2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(47, 47, 47)
+                        .addGroup(pnlTransaction2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlTransaction2Layout.createSequentialGroup()
+                                .addGroup(pnlTransaction2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel52, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(pnlTransaction2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel54, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
+                                    .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(pnlTransaction2Layout.createSequentialGroup()
+                                .addComponent(jLabel51)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlTransaction2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlTransaction2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField35, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jDateChooser3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(pnlTransaction2Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 734, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 772, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlTransaction2Layout.createSequentialGroup()
-                        .addGap(221, 221, 221)
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(72, 72, 72)
+                        .addGap(138, 138, 138)
+                        .addComponent(btn_Transaction2_Back, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43)
                         .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(59, 59, 59))
         );
         pnlTransaction2Layout.setVerticalGroup(
             pnlTransaction2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlTransaction2Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
-                .addGroup(pnlTransaction2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel57)
-                    .addGroup(pnlTransaction2Layout.createSequentialGroup()
-                        .addGroup(pnlTransaction2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel51)
-                            .addComponent(jLabel53))
-                        .addGap(18, 18, 18)
-                        .addGroup(pnlTransaction2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel52)
-                            .addComponent(jLabel54)
-                            .addComponent(jLabel55)
-                            .addComponent(jTextField35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(pnlTransaction2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlTransaction2Layout.createSequentialGroup()
-                                .addGap(23, 23, 23)
-                                .addGroup(pnlTransaction2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel56)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTransaction2Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jDateChooser3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pnlTransaction2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel51)
+                    .addComponent(jLabel53))
+                .addGap(18, 18, 18)
+                .addGroup(pnlTransaction2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel52)
+                    .addComponent(jLabel54)
+                    .addComponent(jLabel55)
+                    .addComponent(jTextField35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(pnlTransaction2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlTransaction2Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlTransaction2Layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(26, Short.MAX_VALUE))
+                        .addGap(23, 23, 23)
+                        .addGroup(pnlTransaction2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel56)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTransaction2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlTransaction2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel57)
+                            .addComponent(jDateChooser3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(51, 51, 51)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addGroup(pnlTransaction2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTransaction2Layout.createSequentialGroup()
+                        .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(22, 22, 22))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTransaction2Layout.createSequentialGroup()
+                        .addGroup(pnlTransaction2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btn_Transaction2_Back, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(55, 55, 55))))
         );
 
-        pnlMain.add(pnlTransaction2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 550));
+        pnlMain.add(pnlTransaction2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, 570));
 
         pnlTransaction.setBackground(new java.awt.Color(255, 255, 255));
         pnlTransaction.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -1650,10 +1741,15 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
         jLabel50.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel50.setText("Enter Account No");
 
-        jButton5.setBackground(new java.awt.Color(0, 153, 255));
-        jButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("SUBMIT");
+        btn_Transaction_Submit.setBackground(new java.awt.Color(0, 153, 255));
+        btn_Transaction_Submit.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_Transaction_Submit.setForeground(new java.awt.Color(255, 255, 255));
+        btn_Transaction_Submit.setText("SUBMIT");
+        btn_Transaction_Submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_Transaction_SubmitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -1668,7 +1764,7 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
                         .addComponent(jTextField30)
                         .addGap(43, 43, 43))
                     .addGroup(jPanel14Layout.createSequentialGroup()
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_Transaction_Submit, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(248, Short.MAX_VALUE))))
         );
         jPanel14Layout.setVerticalGroup(
@@ -1679,7 +1775,7 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
                     .addComponent(jLabel50)
                     .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_Transaction_Submit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
@@ -1690,56 +1786,61 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
             .addGroup(pnlTransactionLayout.createSequentialGroup()
                 .addGap(88, 88, 88)
                 .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addContainerGap(180, Short.MAX_VALUE))
         );
         pnlTransactionLayout.setVerticalGroup(
             pnlTransactionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlTransactionLayout.createSequentialGroup()
                 .addGap(105, 105, 105)
                 .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(272, Short.MAX_VALUE))
+                .addContainerGap(290, Short.MAX_VALUE))
         );
 
-        pnlMain.add(pnlTransaction, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        pnlMain.add(pnlTransaction, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, 570));
 
         pnlCusList.setBackground(new java.awt.Color(255, 255, 255));
         pnlCusList.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jScrollPane3.setBackground(new java.awt.Color(255, 255, 255));
-        jScrollPane3.setOpaque(false);
+        jScrollPane3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tblCustomer.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        tblCustomer.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {"aa", "aaaaa", "aaaaaa", "aaaaaa", "aaaaaa", "aaaaaa", "aaaaaaa"},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "NAME", "ADDRESS", "PHONE", "GENDER", "DOB", "EMAIL"
             }
         ));
-        jTable2.setOpaque(false);
-        jScrollPane3.setViewportView(jTable2);
+        tblCustomer.setRowHeight(20);
+        jScrollPane3.setViewportView(tblCustomer);
 
         javax.swing.GroupLayout pnlCusListLayout = new javax.swing.GroupLayout(pnlCusList);
         pnlCusList.setLayout(pnlCusListLayout);
         pnlCusListLayout.setHorizontalGroup(
             pnlCusListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlCusListLayout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 647, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addGap(37, 37, 37)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 808, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         pnlCusListLayout.setVerticalGroup(
             pnlCusListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlCusListLayout.createSequentialGroup()
-                .addGap(102, 102, 102)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(189, Short.MAX_VALUE))
+                .addGap(76, 76, 76)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(175, Short.MAX_VALUE))
         );
 
-        pnlMain.add(pnlCusList, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 550));
+        pnlMain.add(pnlCusList, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, 570));
 
         pnlBalanceEnquiry.setBackground(new java.awt.Color(255, 255, 255));
         pnlBalanceEnquiry.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -1751,10 +1852,15 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
         jLabel64.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel64.setText("Enter Account No");
 
-        jButton7.setBackground(new java.awt.Color(0, 153, 255));
-        jButton7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setText("SUBMIT");
+        btn_BE_Submit.setBackground(new java.awt.Color(0, 153, 255));
+        btn_BE_Submit.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_BE_Submit.setForeground(new java.awt.Color(255, 255, 255));
+        btn_BE_Submit.setText("SUBMIT");
+        btn_BE_Submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_BE_SubmitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
@@ -1769,7 +1875,7 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
                         .addComponent(jTextField36)
                         .addGap(43, 43, 43))
                     .addGroup(jPanel16Layout.createSequentialGroup()
-                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_BE_Submit, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(248, Short.MAX_VALUE))))
         );
         jPanel16Layout.setVerticalGroup(
@@ -1780,7 +1886,7 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
                     .addComponent(jLabel64)
                     .addComponent(jTextField36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_BE_Submit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
@@ -1791,17 +1897,17 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
             .addGroup(pnlBalanceEnquiryLayout.createSequentialGroup()
                 .addGap(88, 88, 88)
                 .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addContainerGap(180, Short.MAX_VALUE))
         );
         pnlBalanceEnquiryLayout.setVerticalGroup(
             pnlBalanceEnquiryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlBalanceEnquiryLayout.createSequentialGroup()
                 .addGap(105, 105, 105)
                 .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(272, Short.MAX_VALUE))
+                .addContainerGap(290, Short.MAX_VALUE))
         );
 
-        pnlMain.add(pnlBalanceEnquiry, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        pnlMain.add(pnlBalanceEnquiry, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, 570));
 
         pnlBalanceEnquiry2.setBackground(new java.awt.Color(255, 255, 255));
         pnlBalanceEnquiry2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -1843,33 +1949,46 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
         jLabel70.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel70.setText("Balance");
 
+        btnSubmit8.setBackground(new java.awt.Color(51, 153, 255));
+        btnSubmit8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnSubmit8.setForeground(new java.awt.Color(255, 255, 255));
+        btnSubmit8.setText("BACK");
+        btnSubmit8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmit8ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
         jPanel17Layout.setHorizontalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel17Layout.createSequentialGroup()
-                .addGap(51, 51, 51)
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel65)
-                    .addComponent(jLabel66)
-                    .addComponent(jLabel67)
-                    .addComponent(jLabel68)
-                    .addComponent(jLabel69)
-                    .addComponent(jLabel70))
-                .addGap(103, 103, 103)
-                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jTextField37, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)
-                        .addComponent(jTextField38)
-                        .addComponent(jTextField39)
-                        .addComponent(jTextField40)
-                        .addComponent(jTextField41))
-                    .addComponent(jTextField42, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel17Layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel65)
+                            .addComponent(jLabel66)
+                            .addComponent(jLabel67)
+                            .addComponent(jLabel68)
+                            .addComponent(jLabel69)
+                            .addComponent(jLabel70))
+                        .addGap(103, 103, 103)
+                        .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jTextField37, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)
+                                .addComponent(jTextField38)
+                                .addComponent(jTextField39)
+                                .addComponent(jTextField40)
+                                .addComponent(jTextField41))
+                            .addComponent(jTextField42, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel17Layout.createSequentialGroup()
+                        .addGap(125, 125, 125)
+                        .addComponent(btnSubmit7, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(48, 48, 48)
+                        .addComponent(btnSubmit8, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(22, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSubmit7, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(209, 209, 209))
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1898,9 +2017,11 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel70)
                     .addComponent(jTextField42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
-                .addComponent(btnSubmit7, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSubmit7, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSubmit8, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(41, 41, 41))
         );
 
         javax.swing.GroupLayout pnlBalanceEnquiry2Layout = new javax.swing.GroupLayout(pnlBalanceEnquiry2);
@@ -1910,19 +2031,19 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
             .addGroup(pnlBalanceEnquiry2Layout.createSequentialGroup()
                 .addGap(127, 127, 127)
                 .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(126, Short.MAX_VALUE))
+                .addContainerGap(194, Short.MAX_VALUE))
         );
         pnlBalanceEnquiry2Layout.setVerticalGroup(
             pnlBalanceEnquiry2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBalanceEnquiry2Layout.createSequentialGroup()
-                .addContainerGap(89, Short.MAX_VALUE)
+                .addContainerGap(107, Short.MAX_VALUE)
                 .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(84, 84, 84))
         );
 
-        pnlMain.add(pnlBalanceEnquiry2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        pnlMain.add(pnlBalanceEnquiry2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, 570));
 
-        getContentPane().add(pnlMain, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 820, 550));
+        getContentPane().add(pnlMain, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 890, 570));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -2051,8 +2172,63 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
 
     private void lblLogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLogoutMouseClicked
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_lblLogoutMouseClicked
+
+    private void btn_AccCreate_SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AccCreate_SubmitActionPerformed
+        // TODO add your handling code here:
+        showPanelMenu(pnlCreateAcc2);
+    }//GEN-LAST:event_btn_AccCreate_SubmitActionPerformed
+
+    private void btn_Withdraw_SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Withdraw_SubmitActionPerformed
+        // TODO add your handling code here:
+        showPanelMenu(pnlWithdraw2);
+    }//GEN-LAST:event_btn_Withdraw_SubmitActionPerformed
+
+    private void btn_Deposit_SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Deposit_SubmitActionPerformed
+        // TODO add your handling code here:
+        showPanelMenu(pnlDeposit2);
+    }//GEN-LAST:event_btn_Deposit_SubmitActionPerformed
+
+    private void btn_Transaction_SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Transaction_SubmitActionPerformed
+        // TODO add your handling code here:
+        showPanelMenu(pnlTransaction2);
+    }//GEN-LAST:event_btn_Transaction_SubmitActionPerformed
+
+    private void btn_BE_SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_BE_SubmitActionPerformed
+        // TODO add your handling code here:
+        showPanelMenu(pnlBalanceEnquiry2);
+    }//GEN-LAST:event_btn_BE_SubmitActionPerformed
+
+    private void lblAccImgMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAccImgMouseClicked
+        // TODO add your handling code here:
+        this.chooseImage();
+    }//GEN-LAST:event_lblAccImgMouseClicked
+
+    private void btn_CreateAcc2_BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CreateAcc2_BackActionPerformed
+        // TODO add your handling code here:
+        showPanelMenu(pnlCreateAcc);
+    }//GEN-LAST:event_btn_CreateAcc2_BackActionPerformed
+
+    private void btn_Withdraw2_BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Withdraw2_BackActionPerformed
+        // TODO add your handling code here:
+        showPanelMenu(pnlWithdraw);
+    }//GEN-LAST:event_btn_Withdraw2_BackActionPerformed
+
+    private void btn_Deposit2_BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Deposit2_BackActionPerformed
+        // TODO add your handling code here:
+        showPanelMenu(pnlDeposit);
+    }//GEN-LAST:event_btn_Deposit2_BackActionPerformed
+
+    private void btn_Transaction2_BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Transaction2_BackActionPerformed
+        // TODO add your handling code here:
+        showPanelMenu(pnlTransaction);
+    }//GEN-LAST:event_btn_Transaction2_BackActionPerformed
+
+    private void btnSubmit8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmit8ActionPerformed
+        // TODO add your handling code here:
+        showPanelMenu(pnlBalanceEnquiry);
+    }//GEN-LAST:event_btnSubmit8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2094,10 +2270,26 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         //setResizable(false);
         showPanelMenu(pnlCreateAcc);
-        XDate.showTime(lblDate,"dd/MM/yyyy");
-        XDate.showTime(lblClock,"hh:mm:ss a");
+        XDate.showTime(lblDate, "dd/MM/yyyy");
+        XDate.showTime(lblClock, "hh:mm:ss a");
+        tableDesign(tblCustomer);
+        tableDesign(tblTransaction);
     }
-    
+
+    private void tableDesign(JTable tbl) {
+        DefaultTableCellRenderer head_render = new DefaultTableCellRenderer();
+        head_render.setPreferredSize(new Dimension(30, 40));
+        head_render.setBackground(new Color(32, 136, 203));
+        head_render.setForeground(new Color(255, 255, 255));
+        head_render.setFont(new Font("Segoe UI", Font.BOLD, 14));
+        //do rong cac cot
+//        setColumnWidths(tblNhanVien,30, 150, 100, 100);
+        tbl.getTableHeader().setDefaultRenderer(head_render);
+        tbl.setRowHeight(35);
+        tbl.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
+        tbl.setBackground(Color.white);
+    }
+
     private void showPanelMenu(JPanel pnl) {
         // Ẩn tất cả các form còn lại
         pnlCreateAcc.setVisible(false);
@@ -2112,21 +2304,21 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
         pnlCusList.setVisible(false);
         pnlBalanceEnquiry.setVisible(false);
         pnlBalanceEnquiry2.setVisible(false);
-        
+
         // show form lên khi click vào menu
         pnl.setVisible(true);
     }
-    
+
     private void setColorMenuItem() {
         // set color button
-        lblCreateAcc.setBackground(new Color(255,255,255));
-        lblDeposit.setBackground(new Color(255,255,255));
-        lblWithdraw.setBackground(new Color(255,255,255));
-        lblTransfer.setBackground(new Color(255,255,255));
-        lblTransaction.setBackground(new Color(255,255,255));
-        lblCusList.setBackground(new Color(255,255,255));
-        lblBalanceEnquiry.setBackground(new Color(255,255,255));
-        lblLogout.setBackground(new Color(255,255,255));
+        lblCreateAcc.setBackground(new Color(255, 255, 255));
+        lblDeposit.setBackground(new Color(255, 255, 255));
+        lblWithdraw.setBackground(new Color(255, 255, 255));
+        lblTransfer.setBackground(new Color(255, 255, 255));
+        lblTransaction.setBackground(new Color(255, 255, 255));
+        lblCusList.setBackground(new Color(255, 255, 255));
+        lblBalanceEnquiry.setBackground(new Color(255, 255, 255));
+        lblLogout.setBackground(new Color(255, 255, 255));
         lblCreateAcc.setForeground(Color.black);
         lblDeposit.setForeground(Color.black);
         lblWithdraw.setForeground(Color.black);
@@ -2135,33 +2327,47 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
         lblCusList.setForeground(Color.black);
         lblBalanceEnquiry.setForeground(Color.black);
         lblLogout.setForeground(Color.black);
-
     }
-    
+
     private void hoverMenu(JLabel lbl) {
         //setColorMenuItem();
         // set color button
         lbl.setBackground(new Color(51, 153, 255));
         lbl.setForeground(Color.white);
+    }
 
+    private void chooseImage() {
+        JFileChooser fileChooser = new JFileChooser();
+        if (fileChooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+            File file = fileChooser.getSelectedFile();
+            XImage.save(file); //lưu hình vào thư mục image
+            ImageIcon icon = XImage.read(file.getName()); //đọc hình từ image
+            lblAccImg.setIcon(icon);
+            lblAccImg.setToolTipText(file.getName()); //giữ tên hình trong tooltip
+        }
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRefresh;
-    private javax.swing.JButton btnSubmit;
-    private javax.swing.JButton btnSubmit2;
     private javax.swing.JButton btnSubmit3;
     private javax.swing.JButton btnSubmit4;
     private javax.swing.JButton btnSubmit5;
     private javax.swing.JButton btnSubmit6;
     private javax.swing.JButton btnSubmit7;
+    private javax.swing.JButton btnSubmit8;
+    private javax.swing.JButton btn_AccCreate_Submit;
+    private javax.swing.JButton btn_BE_Submit;
+    private javax.swing.JButton btn_CreateAcc2_Back;
+    private javax.swing.JButton btn_CreateAcc2_Submit;
+    private javax.swing.JButton btn_Deposit2_Back;
+    private javax.swing.JButton btn_Deposit_Submit;
+    private javax.swing.JButton btn_Transaction2_Back;
+    private javax.swing.JButton btn_Transaction_Submit;
+    private javax.swing.JButton btn_Withdraw2_Back;
+    private javax.swing.JButton btn_Withdraw_Submit;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
@@ -2171,7 +2377,6 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -2259,8 +2464,6 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
@@ -2304,6 +2507,7 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JLabel lblAccImg;
     private javax.swing.JLabel lblBalanceEnquiry;
     private javax.swing.JLabel lblClock;
     private javax.swing.JLabel lblCreateAcc;
@@ -2329,5 +2533,7 @@ public class EmployeeHomeUI extends javax.swing.JFrame {
     private javax.swing.JPanel pnlTransfer;
     private javax.swing.JPanel pnlWithdraw;
     private javax.swing.JPanel pnlWithdraw2;
+    private javax.swing.JTable tblCustomer;
+    private javax.swing.JTable tblTransaction;
     // End of variables declaration//GEN-END:variables
 }
