@@ -12,6 +12,7 @@ import com.bmSys.model.EmployeeModel;
 import com.bmSys.model.TransactionModel;
 import com.bmSys.utils.MailUtil;
 import com.bmSys.utils.MsgBoxUtil;
+import com.bmSys.utils.PasswordUtil;
 import com.bmSys.utils.Validator;
 import com.bmSys.utils.XDate;
 import com.toedter.calendar.JDateChooser;
@@ -19,6 +20,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
+import java.io.File;
 import java.sql.Timestamp;
 import java.util.List;
 import java.util.Vector;
@@ -27,6 +29,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.RowFilter;
@@ -44,6 +47,7 @@ public class Home extends javax.swing.JFrame {
 
     String email = "";
     public TableRowSorter sorter;
+    private EmployeeModel model;
 
     /**
      * Creates new form EmployeeHomeUI
@@ -80,6 +84,7 @@ public class Home extends javax.swing.JFrame {
         lblCusList = new javax.swing.JLabel();
         lblBalanceEnquiry = new javax.swing.JLabel();
         lblLogout = new javax.swing.JLabel();
+        lblChangePass = new javax.swing.JLabel();
         pnlMain = new javax.swing.JPanel();
         pnlCreateAcc = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
@@ -238,6 +243,21 @@ public class Home extends javax.swing.JFrame {
         jLabel68 = new javax.swing.JLabel();
         jLabel70 = new javax.swing.JLabel();
         btn_BE2_Back = new javax.swing.JButton();
+        pnlChangePass = new javax.swing.JPanel();
+        jPanel12 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        lbl_CP_Username = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        txt_CP_CurrentPass = new javax.swing.JPasswordField();
+        jLabel20 = new javax.swing.JLabel();
+        txt_CP_NewPass = new javax.swing.JPasswordField();
+        jLabel49 = new javax.swing.JLabel();
+        txt_CP_NewPass2 = new javax.swing.JPasswordField();
+        lbl_CP_ShowPass1 = new javax.swing.JLabel();
+        lbl_CP_ShowPass2 = new javax.swing.JLabel();
+        lbl_CP_ShowPass3 = new javax.swing.JLabel();
+        btn_CP_Confirm = new javax.swing.JButton();
+        btn_CP_Clear = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("HOME");
@@ -326,14 +346,14 @@ public class Home extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bmSys/icon/menu32.png"))); // NOI18N
         jLabel2.setText(" MENU");
-        pnlMenu.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 200, 40));
+        pnlMenu.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 200, 40));
 
         lblCreateAcc.setBackground(new java.awt.Color(255, 255, 255));
         lblCreateAcc.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         lblCreateAcc.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblCreateAcc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bmSys/icon/plus24.png"))); // NOI18N
         lblCreateAcc.setText(" Create Account");
-        lblCreateAcc.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 18, 1, 1));
+        lblCreateAcc.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 15, 1, 1));
         lblCreateAcc.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblCreateAcc.setOpaque(true);
         lblCreateAcc.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -347,14 +367,14 @@ public class Home extends javax.swing.JFrame {
                 lblCreateAccMouseExited(evt);
             }
         });
-        pnlMenu.add(lblCreateAcc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 200, 50));
+        pnlMenu.add(lblCreateAcc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 200, 50));
 
         lblWithdraw.setBackground(new java.awt.Color(255, 255, 255));
         lblWithdraw.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         lblWithdraw.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblWithdraw.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bmSys/icon/cash-withdrawal24.png"))); // NOI18N
         lblWithdraw.setText(" Withdraw");
-        lblWithdraw.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 18, 1, 1));
+        lblWithdraw.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 15, 1, 1));
         lblWithdraw.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblWithdraw.setOpaque(true);
         lblWithdraw.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -368,14 +388,14 @@ public class Home extends javax.swing.JFrame {
                 lblWithdrawMouseExited(evt);
             }
         });
-        pnlMenu.add(lblWithdraw, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 200, 50));
+        pnlMenu.add(lblWithdraw, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 200, 50));
 
         lblDeposit.setBackground(new java.awt.Color(255, 255, 255));
         lblDeposit.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         lblDeposit.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblDeposit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bmSys/icon/deposit24.png"))); // NOI18N
         lblDeposit.setText(" Deposit");
-        lblDeposit.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 18, 1, 1));
+        lblDeposit.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 15, 1, 1));
         lblDeposit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblDeposit.setOpaque(true);
         lblDeposit.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -389,14 +409,14 @@ public class Home extends javax.swing.JFrame {
                 lblDepositMouseExited(evt);
             }
         });
-        pnlMenu.add(lblDeposit, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 200, 50));
+        pnlMenu.add(lblDeposit, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 200, 50));
 
         lblTransfer.setBackground(new java.awt.Color(255, 255, 255));
         lblTransfer.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         lblTransfer.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblTransfer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bmSys/icon/money24.png"))); // NOI18N
         lblTransfer.setText(" Transfer");
-        lblTransfer.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 18, 1, 1));
+        lblTransfer.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 15, 1, 1));
         lblTransfer.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblTransfer.setOpaque(true);
         lblTransfer.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -410,14 +430,14 @@ public class Home extends javax.swing.JFrame {
                 lblTransferMouseExited(evt);
             }
         });
-        pnlMenu.add(lblTransfer, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 200, 50));
+        pnlMenu.add(lblTransfer, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 200, 50));
 
         lblTransaction.setBackground(new java.awt.Color(255, 255, 255));
         lblTransaction.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         lblTransaction.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblTransaction.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bmSys/icon/transaction24.png"))); // NOI18N
         lblTransaction.setText(" Transaction");
-        lblTransaction.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 18, 1, 1));
+        lblTransaction.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 15, 1, 1));
         lblTransaction.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblTransaction.setOpaque(true);
         lblTransaction.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -431,14 +451,14 @@ public class Home extends javax.swing.JFrame {
                 lblTransactionMouseExited(evt);
             }
         });
-        pnlMenu.add(lblTransaction, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 200, 50));
+        pnlMenu.add(lblTransaction, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 200, 50));
 
         lblCusList.setBackground(new java.awt.Color(255, 255, 255));
         lblCusList.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         lblCusList.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblCusList.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bmSys/icon/customer24.png"))); // NOI18N
         lblCusList.setText(" Customer List");
-        lblCusList.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 18, 1, 1));
+        lblCusList.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 15, 1, 1));
         lblCusList.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblCusList.setOpaque(true);
         lblCusList.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -452,14 +472,14 @@ public class Home extends javax.swing.JFrame {
                 lblCusListMouseExited(evt);
             }
         });
-        pnlMenu.add(lblCusList, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 200, 50));
+        pnlMenu.add(lblCusList, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 200, 50));
 
         lblBalanceEnquiry.setBackground(new java.awt.Color(255, 255, 255));
         lblBalanceEnquiry.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         lblBalanceEnquiry.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblBalanceEnquiry.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bmSys/icon/wallet24.png"))); // NOI18N
         lblBalanceEnquiry.setText(" Balance Enquiry");
-        lblBalanceEnquiry.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 18, 1, 1));
+        lblBalanceEnquiry.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 15, 1, 1));
         lblBalanceEnquiry.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblBalanceEnquiry.setOpaque(true);
         lblBalanceEnquiry.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -473,14 +493,14 @@ public class Home extends javax.swing.JFrame {
                 lblBalanceEnquiryMouseExited(evt);
             }
         });
-        pnlMenu.add(lblBalanceEnquiry, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 200, 50));
+        pnlMenu.add(lblBalanceEnquiry, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 200, 50));
 
         lblLogout.setBackground(new java.awt.Color(255, 255, 255));
         lblLogout.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         lblLogout.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bmSys/icon/logout24.png"))); // NOI18N
         lblLogout.setText(" Logout");
-        lblLogout.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 18, 1, 1));
+        lblLogout.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 15, 1, 1));
         lblLogout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblLogout.setOpaque(true);
         lblLogout.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -494,7 +514,27 @@ public class Home extends javax.swing.JFrame {
                 lblLogoutMouseExited(evt);
             }
         });
-        pnlMenu.add(lblLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 450, 200, 50));
+        pnlMenu.add(lblLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, 200, 50));
+
+        lblChangePass.setBackground(new java.awt.Color(255, 255, 255));
+        lblChangePass.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        lblChangePass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bmSys/icon/reset-password24.png"))); // NOI18N
+        lblChangePass.setText("Change Password");
+        lblChangePass.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 15, 1, 1));
+        lblChangePass.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblChangePass.setOpaque(true);
+        lblChangePass.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblChangePassMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblChangePassMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblChangePassMouseExited(evt);
+            }
+        });
+        pnlMenu.add(lblChangePass, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 200, 50));
 
         getContentPane().add(pnlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 200, 580));
 
@@ -1792,7 +1832,7 @@ public class Home extends javax.swing.JFrame {
                         .addGroup(pnlTransaction2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btn_Transaction2_Back, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btn_Transaction2_Print, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pnlMain.add(pnlTransaction2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 580));
@@ -2096,6 +2136,169 @@ public class Home extends javax.swing.JFrame {
 
         pnlMain.add(pnlBalanceEnquiry2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 580));
 
+        pnlChangePass.setBackground(new java.awt.Color(255, 255, 255));
+        pnlChangePass.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jPanel12.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setText("Username:");
+
+        lbl_CP_Username.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lbl_CP_Username.setText("Name");
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel14.setText("Current Password:");
+
+        txt_CP_CurrentPass.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        jLabel20.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel20.setText("New Password:");
+
+        txt_CP_NewPass.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        jLabel49.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel49.setText("Confirm New Password:");
+
+        txt_CP_NewPass2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        lbl_CP_ShowPass1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lbl_CP_ShowPass1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bmSys/icon/hidepass24.png"))); // NOI18N
+        lbl_CP_ShowPass1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lbl_CP_ShowPass1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_CP_ShowPass1MouseClicked(evt);
+            }
+        });
+
+        lbl_CP_ShowPass2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lbl_CP_ShowPass2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bmSys/icon/hidepass24.png"))); // NOI18N
+        lbl_CP_ShowPass2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lbl_CP_ShowPass2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_CP_ShowPass2MouseClicked(evt);
+            }
+        });
+
+        lbl_CP_ShowPass3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bmSys/icon/hidepass24.png"))); // NOI18N
+        lbl_CP_ShowPass3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lbl_CP_ShowPass3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_CP_ShowPass3MouseClicked(evt);
+            }
+        });
+
+        btn_CP_Confirm.setBackground(new java.awt.Color(51, 153, 255));
+        btn_CP_Confirm.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_CP_Confirm.setForeground(new java.awt.Color(255, 255, 255));
+        btn_CP_Confirm.setText("CONFIRM");
+        btn_CP_Confirm.setBorder(null);
+        btn_CP_Confirm.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_CP_Confirm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_CP_ConfirmActionPerformed(evt);
+            }
+        });
+
+        btn_CP_Clear.setBackground(new java.awt.Color(51, 153, 255));
+        btn_CP_Clear.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_CP_Clear.setForeground(new java.awt.Color(255, 255, 255));
+        btn_CP_Clear.setText("CLEAR");
+        btn_CP_Clear.setBorder(null);
+        btn_CP_Clear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_CP_Clear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_CP_ClearActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel20)
+                            .addComponent(jLabel49))
+                        .addGap(45, 45, 45)
+                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbl_CP_Username)
+                            .addGroup(jPanel12Layout.createSequentialGroup()
+                                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(btn_CP_Clear, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(txt_CP_NewPass, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txt_CP_CurrentPass, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txt_CP_NewPass2, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lbl_CP_ShowPass3)
+                                    .addComponent(lbl_CP_ShowPass2)
+                                    .addComponent(lbl_CP_ShowPass1)))))
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addGap(97, 97, 97)
+                        .addComponent(btn_CP_Confirm, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(74, Short.MAX_VALUE))
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lbl_CP_ShowPass1))
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(lbl_CP_Username))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txt_CP_CurrentPass)
+                            .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lbl_CP_ShowPass2)
+                    .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txt_CP_NewPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(txt_CP_NewPass2)
+                        .addComponent(jLabel49, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lbl_CP_ShowPass3, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(76, 76, 76)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_CP_Confirm, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_CP_Clear, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(100, 100, 100))
+        );
+
+        javax.swing.GroupLayout pnlChangePassLayout = new javax.swing.GroupLayout(pnlChangePass);
+        pnlChangePass.setLayout(pnlChangePassLayout);
+        pnlChangePassLayout.setHorizontalGroup(
+            pnlChangePassLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlChangePassLayout.createSequentialGroup()
+                .addGap(166, 166, 166)
+                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(192, Short.MAX_VALUE))
+        );
+        pnlChangePassLayout.setVerticalGroup(
+            pnlChangePassLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlChangePassLayout.createSequentialGroup()
+                .addGap(108, 108, 108)
+                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(111, Short.MAX_VALUE))
+        );
+
+        pnlMain.add(pnlChangePass, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 580));
+
         getContentPane().add(pnlMain, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 930, 580));
 
         pack();
@@ -2326,33 +2529,21 @@ public class Home extends javax.swing.JFrame {
 
     private void btn_Withdraw2_SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Withdraw2_SubmitActionPerformed
         // TODO add your handling code here:
-        if (withdrawValidation()) {
-            boolean a = MsgBoxUtil.confirm(this, "Do you want to withdraw?");
-            if (a) {
-                withdraw();
-            }
-        }
+        withdraw();
     }//GEN-LAST:event_btn_Withdraw2_SubmitActionPerformed
 
     private void btn_Deposit2_SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Deposit2_SubmitActionPerformed
         // TODO add your handling code here:
-        if (depositValidation()) {
-            boolean a = MsgBoxUtil.confirm(this, "Do you want to deposit?");
-            if (a) {
-                deposit();
-            }
-        }
+        deposit();
     }//GEN-LAST:event_btn_Deposit2_SubmitActionPerformed
 
     private void btn_AccHolder_FindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AccHolder_FindActionPerformed
         // TODO add your handling code here:
-        // Đây là nút find của AccHolder
         findAccHolder();
     }//GEN-LAST:event_btn_AccHolder_FindActionPerformed
 
     private void btn_Beneficiary_FindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Beneficiary_FindActionPerformed
         // TODO add your handling code here:
-        // Đây là nút find của Beneficiary
         findBeneficiary();
     }//GEN-LAST:event_btn_Beneficiary_FindActionPerformed
 
@@ -2364,7 +2555,6 @@ public class Home extends javax.swing.JFrame {
 
     private void btn_Transfer_SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Transfer_SubmitActionPerformed
         // TODO add your handling code here:
-        // Đây là nút submit bảng Transfer
         submitTransfer();
     }//GEN-LAST:event_btn_Transfer_SubmitActionPerformed
 
@@ -2381,6 +2571,48 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         clearCreateAcc();
     }//GEN-LAST:event_btn_CreateAcc_RefreshActionPerformed
+
+    private void lblChangePassMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblChangePassMouseEntered
+        // TODO add your handling code here:
+        hoverMenu(lblChangePass);
+    }//GEN-LAST:event_lblChangePassMouseEntered
+
+    private void lblChangePassMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblChangePassMouseExited
+        // TODO add your handling code here:
+        setColorMenuItem();
+    }//GEN-LAST:event_lblChangePassMouseExited
+
+    private void lblChangePassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblChangePassMouseClicked
+        // TODO add your handling code here:
+        showPanelMenu(pnlChangePass);
+        lblTitle.setText("Change Password");
+        refresh(txt_CP_CurrentPass, txt_CP_NewPass, txt_CP_NewPass2);
+    }//GEN-LAST:event_lblChangePassMouseClicked
+
+    private void lbl_CP_ShowPass1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_CP_ShowPass1MouseClicked
+        // TODO add your handling code here:
+        PasswordUtil.showPass(txt_CP_CurrentPass, lbl_CP_ShowPass1);
+    }//GEN-LAST:event_lbl_CP_ShowPass1MouseClicked
+
+    private void btn_CP_ClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CP_ClearActionPerformed
+        // TODO add your handling code here:
+        refresh(txt_CP_CurrentPass, txt_CP_NewPass, txt_CP_NewPass2);
+    }//GEN-LAST:event_btn_CP_ClearActionPerformed
+
+    private void btn_CP_ConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CP_ConfirmActionPerformed
+        // TODO add your handling code here:
+        changePass(model);
+    }//GEN-LAST:event_btn_CP_ConfirmActionPerformed
+
+    private void lbl_CP_ShowPass2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_CP_ShowPass2MouseClicked
+        // TODO add your handling code here:
+        PasswordUtil.showPass(txt_CP_NewPass, lbl_CP_ShowPass2);
+    }//GEN-LAST:event_lbl_CP_ShowPass2MouseClicked
+
+    private void lbl_CP_ShowPass3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_CP_ShowPass3MouseClicked
+        // TODO add your handling code here:
+        PasswordUtil.showPass(txt_CP_NewPass2, lbl_CP_ShowPass3);
+    }//GEN-LAST:event_lbl_CP_ShowPass3MouseClicked
     DocumentListener dl = new DocumentListener() {
         @Override
         public void insertUpdate(DocumentEvent e) {
@@ -2401,11 +2633,12 @@ public class Home extends javax.swing.JFrame {
 
 // begin set up UI
     private void init(EmployeeModel model) {
+        this.model = model;
         setLocationRelativeTo(null);
         XDate.showTime(lblDate, "dd-MM-yyyy");
         XDate.showTime(lblTime, "hh:mm:ss a");
         lblEmployee.setText(model.getId());
-        lblLastLogin.setText(model.getLastLogin().toString());
+        //lblLastLogin.setText(model.getLastLogin().toString());
         resizeImage(model);
         showPanelMenu(pnlCreateAcc);
         tableDesign(tblCustomer);
@@ -2414,6 +2647,8 @@ public class Home extends javax.swing.JFrame {
         txt_CreateAcc_Birth.setEnabled(false);
         txt_CreateAcc_Birth.getCalendarButton().setEnabled(true);
         txt_Transacion2_SearchTrans.getDocument().addDocumentListener(dl);
+        //set Change pass panel Username
+        lbl_CP_Username.setText(model.getUsername());
     }
 
     private void clearCreateAcc() {
@@ -2452,6 +2687,7 @@ public class Home extends javax.swing.JFrame {
         pnlCusList.setVisible(false);
         pnlBalanceEnquiry.setVisible(false);
         pnlBalanceEnquiry2.setVisible(false);
+        pnlChangePass.setVisible(false);
 
         // show form lên khi click vào menu
         renderNewId();
@@ -2468,6 +2704,7 @@ public class Home extends javax.swing.JFrame {
         lblCusList.setBackground(new Color(255, 255, 255));
         lblBalanceEnquiry.setBackground(new Color(255, 255, 255));
         lblLogout.setBackground(new Color(255, 255, 255));
+        lblChangePass.setBackground(new Color(255, 255, 255));
         lblCreateAcc.setForeground(Color.black);
         lblDeposit.setForeground(Color.black);
         lblWithdraw.setForeground(Color.black);
@@ -2476,7 +2713,7 @@ public class Home extends javax.swing.JFrame {
         lblCusList.setForeground(Color.black);
         lblBalanceEnquiry.setForeground(Color.black);
         lblLogout.setForeground(Color.black);
-
+        lblChangePass.setForeground(Color.black);
     }
 
     private void hoverMenu(JLabel lbl) {
@@ -2593,7 +2830,10 @@ public class Home extends javax.swing.JFrame {
             error += "Withdraw cannot be null!\n";
         }
         if (Validator.checkMoney(txt_Withdraw2_WithDraw)) {
-            error += "Withdraw must be numeric and greater than 0!\n";
+            error += "Withdraw must be numeric and greater than 10000!\n";
+        }
+        if (Validator.checkMoney2(txt_Withdraw2_WithDraw, txt_Withdraw2_Balance)) {
+            error += "Withdraw amount cannot be exceed the balance!\n";
         }
         //Submit
         if (!error.equals("")) {
@@ -2623,29 +2863,39 @@ public class Home extends javax.swing.JFrame {
     }
 
     private void withdraw() {
-        try {
-            String soTK = txt_Withdraw2_AccNo.getText();
-            float money = Float.valueOf(txt_Withdraw2_WithDraw.getText());
-            AccountDAO dao = new AccountDAO();
-            dao.updateWithDraw(soTK, money);
-            MsgBoxUtil.alert(this, "Money withdraw");
+        if (withdrawValidation()) {
+            boolean a = MsgBoxUtil.confirm(this, "Do you want to withdraw?");
+            if (a) {
+                try {
+                    String soTK = txt_Withdraw2_AccNo.getText();
+                    float money = Float.valueOf(txt_Withdraw2_WithDraw.getText());
+                    AccountDAO dao = new AccountDAO();
+                    dao.updateWithDraw(soTK, money);
+                    MsgBoxUtil.alert(this, "Money withdraw");
 
-            saveTransaction("Withdraw money", money, 1, "Withdraw at the bank", soTK, "-");
-        } catch (Exception e) {
-            System.out.println(e);
+                    saveTransaction("Withdraw money", money, 1, "Withdraw at the bank", soTK, "-");
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+            }
         }
     }
 
     private void deposit() {
-        try {
-            String soTK = txt_Deposit2_AccNo.getText();
-            float money = Float.valueOf(txt_Deposit2_Amount.getText());
-            AccountDAO dao = new AccountDAO();
-            dao.updateDeposit(soTK, money);
-            JOptionPane.showMessageDialog(this, "Money deposit");
-            saveTransaction("Deposit money", money, 1, "Deposit at the bank", soTK, "+");
-        } catch (Exception e) {
-            System.out.println(e);
+        if (depositValidation()) {
+            boolean a = MsgBoxUtil.confirm(this, "Do you want to deposit?");
+            if (a) {
+                try {
+                    String soTK = txt_Deposit2_AccNo.getText();
+                    float money = Float.valueOf(txt_Deposit2_Amount.getText());
+                    AccountDAO dao = new AccountDAO();
+                    dao.updateDeposit(soTK, money);
+                    JOptionPane.showMessageDialog(this, "Money deposit");
+                    saveTransaction("Deposit money", money, 1, "Deposit at the bank", soTK, "+");
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+            }
         }
     }
 
@@ -2853,12 +3103,60 @@ public class Home extends javax.swing.JFrame {
         }
     }
 
+    //Change Password
+    private boolean changePassValidation(EmployeeModel model) {
+        String error = "";
+
+        if (Validator.checkEmpty(txt_CP_CurrentPass)) {
+            error += "Current password cannot be null!\n";
+        }
+        if (!txt_CP_CurrentPass.getText().trim().equals(model.getPassword())) {
+            error += "Wrong current password!\n";
+        }
+        if (Validator.checkEmpty(txt_CP_NewPass)) {
+            error += "New password cannot be null!\n";
+        }
+        if (Validator.checkEmpty(txt_CP_NewPass2)) {
+            error += "Confirm new password cannot be null!\n";
+        }
+        if (Validator.checkStrings(txt_CP_NewPass2, txt_CP_NewPass)) {
+            error += "Confirm new password does not match!\n";
+        }
+        //Submit
+        if (!error.equals("")) {
+            JOptionPane.showMessageDialog(null, error);
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    private void changePass(EmployeeModel model) {
+        if (changePassValidation(model)) {
+            boolean a = MsgBoxUtil.confirm(this, "Do you want to change password?");
+            if (a) {
+                try {
+                    EmployeeDAO edao = new EmployeeDAO();
+                    String newPass = txt_CP_NewPass.getText();
+                    model.setPassword(newPass);
+                    edao.update(model);
+                    MsgBoxUtil.alert(this, "Change password successfully!");
+                    refresh(txt_CP_CurrentPass, txt_CP_NewPass, txt_CP_NewPass2);
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+            }
+        }
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSubmit2;
     private javax.swing.JButton btn_AccHolder_Find;
     private javax.swing.JButton btn_BE2_Back;
     private javax.swing.JButton btn_BE_Submit;
     private javax.swing.JButton btn_Beneficiary_Find;
+    private javax.swing.JButton btn_CP_Clear;
+    private javax.swing.JButton btn_CP_Confirm;
     private javax.swing.JButton btn_CreateAcc2_Back;
     private javax.swing.JButton btn_CreateAcc_Refresh;
     private javax.swing.JButton btn_CreateAcc_Submit;
@@ -2876,15 +3174,18 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
@@ -2915,6 +3216,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
@@ -2935,6 +3237,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
@@ -2952,6 +3255,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lblBalanceEnquiry;
+    private javax.swing.JLabel lblChangePass;
     private javax.swing.JLabel lblCreateAcc;
     private javax.swing.JLabel lblCusList;
     private javax.swing.JLabel lblDate;
@@ -2965,8 +3269,13 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel lblTransaction;
     private javax.swing.JLabel lblTransfer;
     private javax.swing.JLabel lblWithdraw;
+    private javax.swing.JLabel lbl_CP_ShowPass1;
+    private javax.swing.JLabel lbl_CP_ShowPass2;
+    private javax.swing.JLabel lbl_CP_ShowPass3;
+    private javax.swing.JLabel lbl_CP_Username;
     private javax.swing.JPanel pnlBalanceEnquiry;
     private javax.swing.JPanel pnlBalanceEnquiry2;
+    private javax.swing.JPanel pnlChangePass;
     private javax.swing.JPanel pnlCreateAcc;
     private javax.swing.JPanel pnlCreateAcc2;
     private javax.swing.JPanel pnlCusList;
@@ -2998,6 +3307,9 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTextField txt_Beneficiary_AccType;
     private javax.swing.JTextField txt_Beneficiary_Balance;
     private javax.swing.JTextField txt_Beneficiary_Name;
+    private javax.swing.JPasswordField txt_CP_CurrentPass;
+    private javax.swing.JPasswordField txt_CP_NewPass;
+    private javax.swing.JPasswordField txt_CP_NewPass2;
     private javax.swing.JTextField txt_CreateAcc2_AccNo;
     private javax.swing.JTextField txt_CreateAcc2_AccType;
     private javax.swing.JTextField txt_CreateAcc2_Balance;

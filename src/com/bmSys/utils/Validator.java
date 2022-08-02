@@ -107,15 +107,15 @@ public class Validator {
             jdc.setBackground(Color.yellow);
             jdc.grabFocus();
             return true;
-        } 
+        }
         jdc.setBackground(Color.white);
         return false;
     }
 
-public static boolean checkMoney(JTextField tf) {
+    public static boolean checkMoney(JTextField tf) {
         try {
             double balance = Double.parseDouble(tf.getText());
-            if (balance <= 0) {
+            if (balance <= 10000) {
                 throw new Exception();
             }
         } catch (NumberFormatException e) {
@@ -124,12 +124,49 @@ public static boolean checkMoney(JTextField tf) {
             tf.grabFocus();
             return true;
         } catch (Exception e) {
-            //MsgBoxUtil.alert(null, "Number must greater than 0");
+            //MsgBoxUtil.alert(null, "Number must greater than 10000");
             tf.setBackground(Color.yellow);
             tf.grabFocus();
             return true;
         }
         tf.setBackground(Color.white);
+        return false;
+    }
+    
+    //Check if the transfer amount exceeds the balance
+    public static boolean checkMoney2(JTextField tfAmount, JTextField tfBalance){
+        try {
+            double amount = Double.parseDouble(tfAmount.getText());
+            double balance = Double.parseDouble(tfBalance.getText());
+            if (amount > balance) {
+                throw new Exception();
+            }
+        } catch (NumberFormatException e) {
+            //MsgBoxUtil.alert(null, "Number must be numeric");
+            tfAmount.setBackground(Color.yellow);
+            tfAmount.grabFocus();
+            return true;
+        } catch (Exception e) {
+            //MsgBoxUtil.alert(null, "Transfer amount cannot be exceed the balance");
+            tfAmount.setBackground(Color.yellow);
+            tfAmount.grabFocus();
+            return true;
+        }
+        tfAmount.setBackground(Color.white);
+        return false;
+    }
+    
+    //Check if 2 textFields matched
+    public static boolean checkStrings(JTextField tf1, JTextField tf2){
+        String s1 = tf1.getText().trim();
+        String s2 = tf2.getText().trim();
+        if (!s1.trim().equals(s2)) {
+            //JOptionPane.showMessageDialog(null, tb);
+            tf1.setBackground(Color.yellow);
+            tf1.grabFocus();
+            return true;
+        }
+        tf1.setBackground(Color.white);
         return false;
     }
 }

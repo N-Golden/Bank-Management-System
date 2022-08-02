@@ -19,6 +19,7 @@ public class EmployeeMapper implements IRowMapper<EmployeeModel> {
             model.setDiaChi(rs.getString("diaChi"));
             model.setSoDT(rs.getString("soDT"));
             model.setEmail(rs.getString("email"));
+            model.setLastLogin(rs.getTimestamp("lastLogin"));
             return model;
         } catch (SQLException ex) {
             System.out.print(ex);

@@ -26,5 +26,10 @@ public class EmployeeDAO extends AbstractDAO<EmployeeModel> {
     public EmployeeModel findOne() {
         String sql = "select TOP 1 * from NhanVien ORDER BY id_nhanVien DESC";
         return query(sql, new EmployeeMapper()).get(0);
-    } 
+    }
+    
+    public void update(EmployeeModel model){
+        String sql = "update NhanVien set hoTen=?, diaChi=?, soDT=?, email=?, password=? where id_nhanVien=?";
+        update(sql, model.getHoTen(), model.getDiaChi(), model.getSoDT(), model.getEmail(),model.getPassword(), model.getId());
+    }
 }
