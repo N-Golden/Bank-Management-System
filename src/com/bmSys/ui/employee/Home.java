@@ -10,6 +10,7 @@ import com.bmSys.model.AccountModel;
 import com.bmSys.model.CustomerModel;
 import com.bmSys.model.EmployeeModel;
 import com.bmSys.model.TransactionModel;
+import com.bmSys.utils.GuiUtil;
 import com.bmSys.utils.MailUtil;
 import com.bmSys.utils.MsgBoxUtil;
 import com.bmSys.utils.PasswordUtil;
@@ -2306,7 +2307,7 @@ public class Home extends javax.swing.JFrame {
 
     private void lblCreateAccMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCreateAccMouseEntered
         // TODO add your handling code here:
-        hoverMenu(lblCreateAcc);
+        GuiUtil.hoverMenu(lblCreateAcc);
     }//GEN-LAST:event_lblCreateAccMouseEntered
 
     private void lblCreateAccMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCreateAccMouseExited
@@ -2323,7 +2324,7 @@ public class Home extends javax.swing.JFrame {
 
     private void lblWithdrawMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblWithdrawMouseEntered
         // TODO add your handling code here:
-        hoverMenu(lblWithdraw);
+        GuiUtil.hoverMenu(lblWithdraw);
     }//GEN-LAST:event_lblWithdrawMouseEntered
 
     private void lblWithdrawMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblWithdrawMouseExited
@@ -2341,7 +2342,7 @@ public class Home extends javax.swing.JFrame {
 
     private void lblDepositMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblDepositMouseEntered
         // TODO add your handling code here:
-        hoverMenu(lblDeposit);
+        GuiUtil.hoverMenu(lblDeposit);
     }//GEN-LAST:event_lblDepositMouseEntered
 
     private void lblDepositMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblDepositMouseExited
@@ -2359,7 +2360,7 @@ public class Home extends javax.swing.JFrame {
 
     private void lblTransferMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTransferMouseEntered
         // TODO add your handling code here:
-        hoverMenu(lblTransfer);
+        GuiUtil.hoverMenu(lblTransfer);
     }//GEN-LAST:event_lblTransferMouseEntered
 
     private void lblTransferMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTransferMouseExited
@@ -2379,7 +2380,7 @@ public class Home extends javax.swing.JFrame {
 
     private void lblTransactionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTransactionMouseEntered
         // TODO add your handling code here:
-        hoverMenu(lblTransaction);
+        GuiUtil.hoverMenu(lblTransaction);
     }//GEN-LAST:event_lblTransactionMouseEntered
 
     private void lblTransactionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTransactionMouseExited
@@ -2397,7 +2398,7 @@ public class Home extends javax.swing.JFrame {
 
     private void lblCusListMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCusListMouseEntered
         // TODO add your handling code here:
-        hoverMenu(lblCusList);
+        GuiUtil.hoverMenu(lblCusList);
     }//GEN-LAST:event_lblCusListMouseEntered
 
     private void lblCusListMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCusListMouseExited
@@ -2414,7 +2415,7 @@ public class Home extends javax.swing.JFrame {
 
     private void lblBalanceEnquiryMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBalanceEnquiryMouseEntered
         // TODO add your handling code here:
-        hoverMenu(lblBalanceEnquiry);
+        GuiUtil.hoverMenu(lblBalanceEnquiry);
     }//GEN-LAST:event_lblBalanceEnquiryMouseEntered
 
     private void lblBalanceEnquiryMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBalanceEnquiryMouseExited
@@ -2432,7 +2433,7 @@ public class Home extends javax.swing.JFrame {
 
     private void lblLogoutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLogoutMouseEntered
         // TODO add your handling code here:
-        hoverMenu(lblLogout);
+        GuiUtil.hoverMenu(lblLogout);
     }//GEN-LAST:event_lblLogoutMouseEntered
 
     private void lblLogoutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLogoutMouseExited
@@ -2574,7 +2575,7 @@ public class Home extends javax.swing.JFrame {
 
     private void lblChangePassMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblChangePassMouseEntered
         // TODO add your handling code here:
-        hoverMenu(lblChangePass);
+        GuiUtil.hoverMenu(lblChangePass);
     }//GEN-LAST:event_lblChangePassMouseEntered
 
     private void lblChangePassMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblChangePassMouseExited
@@ -2641,8 +2642,8 @@ public class Home extends javax.swing.JFrame {
         //lblLastLogin.setText(model.getLastLogin().toString());
         resizeImage(model);
         showPanelMenu(pnlCreateAcc);
-        tableDesign(tblCustomer);
-        tableDesign(tblTransaction);
+        GuiUtil.tableDesign(tblCustomer);
+        GuiUtil.tableDesign(tblTransaction);
         //set JDateChooser
         txt_CreateAcc_Birth.setEnabled(false);
         txt_CreateAcc_Birth.getCalendarButton().setEnabled(true);
@@ -2659,19 +2660,6 @@ public class Home extends javax.swing.JFrame {
         txt_CreateAcc_Birth.setBackground(Color.white);
     }
 
-    private void tableDesign(JTable tbl) {
-        DefaultTableCellRenderer head_render = new DefaultTableCellRenderer();
-        head_render.setPreferredSize(new Dimension(30, 40));
-        head_render.setBackground(new Color(32, 136, 203));
-        head_render.setForeground(new Color(255, 255, 255));
-        head_render.setFont(new Font("Segoe UI", Font.BOLD, 14));
-        //do rong cac cot
-//        setColumnWidths(tbl,30, 150, 100, 100);
-        tbl.getTableHeader().setDefaultRenderer(head_render);
-        tbl.setRowHeight(35);
-        tbl.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 14));
-        tbl.setBackground(Color.white);
-    }
 
     private void showPanelMenu(JPanel pnl) {
         // Ẩn tất cả các form còn lại
@@ -2716,13 +2704,6 @@ public class Home extends javax.swing.JFrame {
         lblChangePass.setForeground(Color.black);
     }
 
-    private void hoverMenu(JLabel lbl) {
-        //setColorMenuItem();
-        // set color button
-        lbl.setBackground(new Color(51, 153, 255));
-        lbl.setForeground(Color.white);
-
-    }
     // end set up UI
 
     // begin Create Acc
@@ -2851,7 +2832,7 @@ public class Home extends javax.swing.JFrame {
             error += "Amount cannot be null!\n";
         }
         if (Validator.checkMoney(txt_Deposit2_Amount)) {
-            error += "Amount must be numeric and greater than 0!\n";
+            error += "Amount must be numeric and greater than 10000!\n";
         }
         //Submit
         if (!error.equals("")) {
