@@ -3,6 +3,7 @@ package com.bmSys.ui.employee;
 import com.bmSys.dao.EmployeeDAO;
 import com.bmSys.model.EmployeeModel;
 import com.bmSys.ui.Loading;
+import com.bmSys.ui.ForgotPass;
 import com.bmSys.utils.PasswordUtil;
 import com.bmSys.utils.Validator;
 import java.util.List;
@@ -226,11 +227,16 @@ public class Login extends javax.swing.JFrame {
 
     private void btnAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdminMouseClicked
         // TODO add your handling code here:
-
+        this.dispose();
+        com.bmSys.ui.admin.Login login = new com.bmSys.ui.admin.Login();
+        login.setVisible(true);
     }//GEN-LAST:event_btnAdminMouseClicked
 
     private void btnForgotPassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnForgotPassMouseClicked
         // TODO add your handling code here:
+        this.dispose();
+        ForgotPass fp = new ForgotPass();
+        fp.setVisible(true);
     }//GEN-LAST:event_btnForgotPassMouseClicked
 
     /**

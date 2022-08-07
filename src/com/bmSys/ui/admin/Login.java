@@ -3,6 +3,7 @@ package com.bmSys.ui.admin;
 
 import com.bmSys.dao.AdminDAO;
 import com.bmSys.model.AdminModel;
+import com.bmSys.ui.ForgotPass;
 import com.bmSys.ui.Loading;
 import com.bmSys.utils.PasswordUtil;
 import java.util.List;
@@ -66,7 +67,7 @@ public class Login extends javax.swing.JFrame {
         btnLog.setForeground(new java.awt.Color(255, 255, 255));
         btnLog.setText("LOGIN");
         btnLog.setBorder(null);
-        btnLog.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnLog.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnLog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLogActionPerformed(evt);
@@ -79,8 +80,15 @@ public class Login extends javax.swing.JFrame {
         lblFP.setForeground(new java.awt.Color(255, 0, 0));
         lblFP.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblFP.setText("Fogot Password");
+        lblFP.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFPMouseClicked(evt);
+            }
+        });
 
         lblview.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bmSys/icon/hidepass24.png"))); // NOI18N
+        lblview.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblview.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblviewMouseClicked(evt);
@@ -91,6 +99,12 @@ public class Login extends javax.swing.JFrame {
         lblBack.setForeground(new java.awt.Color(255, 0, 51));
         lblBack.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblBack.setText("Back");
+        lblBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblBackMouseClicked(evt);
+            }
+        });
 
         txtPW.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
@@ -121,12 +135,11 @@ public class Login extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(lblFP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
-                    .addComponent(btnLog, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnLog, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(lblBack, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblBack, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(230, 230, 230))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,10 +161,10 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(btnLog, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(lblBack)
-                .addGap(18, 18, 18)
-                .addComponent(lblFP)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addComponent(lblBack, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblFP, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 500, 386));
@@ -202,6 +215,20 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
         PasswordUtil.showPass(txtPW, lblview);
     }//GEN-LAST:event_lblviewMouseClicked
+
+    private void lblBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBackMouseClicked
+        // TODO add your handling code here:
+        this.dispose();
+        com.bmSys.ui.employee.Login login = new com.bmSys.ui.employee.Login();
+        login.setVisible(true);
+    }//GEN-LAST:event_lblBackMouseClicked
+
+    private void lblFPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFPMouseClicked
+        // TODO add your handling code here:
+        this.dispose();
+        ForgotPass fp = new ForgotPass();
+        fp.setVisible(true);
+    }//GEN-LAST:event_lblFPMouseClicked
 
     /**
      * @param args the command line arguments

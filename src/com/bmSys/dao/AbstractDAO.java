@@ -15,8 +15,8 @@ public class AbstractDAO<T> {
 
     String driverName = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
     String url = "jdbc:sqlserver://localhost:1433;databaseName=BankingSys";
-    String username = "nguyenchodien";
-    String password = "123";
+    String username = "sa";
+    String password = "nhoxmebien1";
 
     public Connection getConnection() {
         try {
