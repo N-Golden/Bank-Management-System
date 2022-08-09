@@ -41,4 +41,9 @@ public class EmployeeDAO extends AbstractDAO<EmployeeModel> {
         String sql = "update NhanVien set hoTen=?, diaChi=?, soDT=?, email=?, password=? where id_nhanVien=?";
         update(sql, model.getHoTen(), model.getDiaChi(), model.getSoDT(), model.getEmail(),model.getPassword(), model.getId());
     }
+    
+    public void delete(String id){
+         String sql = "DELETE FROM NhanVien WHERE id_nhanVien=?";
+         update(sql, id);
+     }
 }

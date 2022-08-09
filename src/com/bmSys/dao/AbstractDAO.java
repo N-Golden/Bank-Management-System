@@ -8,15 +8,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import com.bmSys.mapper.IRowMapper;
-import java.sql.CallableStatement;
-import java.sql.Statement;
 
 public class AbstractDAO<T> {
 
     String driverName = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
     String url = "jdbc:sqlserver://localhost:1433;databaseName=BankingSys";
-    String username = "sa";
-    String password = "nhoxmebien1";
+    String username = "nguyenchodien";
+    String password = "123";
 
     public Connection getConnection() {
         try {

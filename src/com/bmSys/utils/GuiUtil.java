@@ -9,7 +9,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 
@@ -25,8 +24,7 @@ public class GuiUtil {
         head_render.setBackground(new Color(32, 136, 203));
         head_render.setForeground(new Color(255, 255, 255));
         head_render.setFont(new Font("Segoe UI", Font.BOLD, 14));
-        //do rong cac cot
-//        setColumnWidths(tbl,30, 150, 100, 100);
+
         tbl.getTableHeader().setDefaultRenderer(head_render);
         tbl.setRowHeight(35);
         tbl.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 14));

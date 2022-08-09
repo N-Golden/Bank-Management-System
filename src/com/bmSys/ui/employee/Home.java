@@ -18,25 +18,18 @@ import com.bmSys.utils.Validator;
 import com.bmSys.utils.XDate;
 import com.toedter.calendar.JDateChooser;
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
 import java.awt.Image;
-import java.io.File;
 import java.sql.Timestamp;
 import java.util.List;
-import java.util.Vector;
 import javax.swing.ImageIcon;
 
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.RowFilter;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
-import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 
@@ -577,11 +570,6 @@ public class Home extends javax.swing.JFrame {
 
         jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tiết kiệm ", "Thanh toán" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bmSys/icon/bluewalet24.jpg"))); // NOI18N
@@ -2030,11 +2018,6 @@ public class Home extends javax.swing.JFrame {
 
         txt_BE2_Balance.setEditable(false);
         txt_BE2_Balance.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txt_BE2_Balance.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_BE2_BalanceActionPerformed(evt);
-            }
-        });
 
         jLabel65.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel65.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bmSys/icon/card24.png"))); // NOI18N
@@ -2492,7 +2475,16 @@ public class Home extends javax.swing.JFrame {
             MsgBoxUtil.alert(null, "Please enter account no.");
         } else {
             findAccount(txt_Transaction_AccNo, pnlTransaction2, txt_Trans2_AccNo, txt_Trans2_Name);
-            loadDataToTable(tblTransaction);
+            DefaultTableModel dtm = (DefaultTableModel) tblTransaction.getModel();
+            dtm.setRowCount(0);
+            sorter = new TableRowSorter(dtm);
+            tblTransaction.setRowSorter(sorter);
+
+            TransactionDAO dao = new TransactionDAO();
+            List<TransactionModel> listTrans = dao.findById(txt_Transaction_AccNo.getText());
+            for (TransactionModel model : listTrans) {
+                dtm.addRow(new TransactionMapper().mapper(model));
+            }
         }
     }//GEN-LAST:event_btn_Transaction_SubmitActionPerformed
 
@@ -2516,17 +2508,12 @@ public class Home extends javax.swing.JFrame {
         showPanelMenu(pnlBalanceEnquiry);
     }//GEN-LAST:event_btn_BE2_BackActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
     private void btnSubmit2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmit2ActionPerformed
         // TODO add your handling code here:
         saveNewAcc();
         refresh(txt_CreateAcc_CusID, txt_CreateAcc_Name, txt_CreateAcc_Contact, txt_CreateAcc_Email);
         showPanelMenu(pnlCreateAcc);
     }//GEN-LAST:event_btnSubmit2ActionPerformed
-
 
     private void btn_Withdraw2_SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Withdraw2_SubmitActionPerformed
         // TODO add your handling code here:
@@ -2563,10 +2550,6 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         loadDataToTable(tblTransaction, txt_Transacion2_StartDate, txt_Transacion2_EndDate);
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void txt_BE2_BalanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_BE2_BalanceActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_BE2_BalanceActionPerformed
 
     private void btn_CreateAcc_RefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CreateAcc_RefreshActionPerformed
         // TODO add your handling code here:
@@ -2617,6 +2600,7 @@ public class Home extends javax.swing.JFrame {
     DocumentListener dl = new DocumentListener() {
         @Override
         public void insertUpdate(DocumentEvent e) {
+            System.out.println("2");
             newFilter(txt_Transacion2_SearchTrans, sorter);
         }
 
@@ -2659,7 +2643,6 @@ public class Home extends javax.swing.JFrame {
         txt_CreateAcc_Birth.setCalendar(null);
         txt_CreateAcc_Birth.setBackground(Color.white);
     }
-
 
     private void showPanelMenu(JPanel pnl) {
         // Ẩn tất cả các form còn lại
@@ -2705,7 +2688,6 @@ public class Home extends javax.swing.JFrame {
     }
 
     // end set up UI
-
     // begin Create Acc
     private boolean CreateAccValidation() {
         String error = "";
@@ -2921,11 +2903,7 @@ public class Home extends javax.swing.JFrame {
         } else if (table == tblTransaction) {
             TransactionDAO transDao = new TransactionDAO();
             List<TransactionModel> listTrans;
-            if (dateChoosers.length == 0) {
-                listTrans = transDao.findList();
-            } else {
-                listTrans = transDao.findList(dateChoosers[0].getDate(), dateChoosers[1].getDate());
-            }
+            listTrans = transDao.findList(dateChoosers[0].getDate(), dateChoosers[1].getDate());
             for (TransactionModel trans : listTrans) {
                 dtm.addRow(new TransactionMapper().mapper(trans));
             }
@@ -3000,7 +2978,7 @@ public class Home extends javax.swing.JFrame {
         RowFilter< DefaultTableModel, Object> rf = null;
         //declare a row filter for your table model
         try {
-            rf = RowFilter.regexFilter("^" + jtf.getText(), 0);
+            rf = RowFilter.regexFilter("^" + jtf.getText(), 4);
             //initialize with a regular expression
         } catch (java.util.regex.PatternSyntaxException e) {
             return;
@@ -3027,7 +3005,7 @@ public class Home extends javax.swing.JFrame {
     }
 
     private void findBeneficiary() {
-        if (!Validator.checkEmpty(txt_Beneficiary_AccNo)) {
+        if (Validator.checkEmpty(txt_Beneficiary_AccNo)) {
             JOptionPane.showMessageDialog(null, "Beneficiary Acc No cannot be null!");
         } else {
             if (txt_Beneficiary_AccNo.getText().trim().equals(txt_AccHolder_AccNo.getText().trim())) {

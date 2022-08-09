@@ -20,4 +20,12 @@ public class CustomerDAO extends AbstractDAO<CustomerModel> {
         String sql = "Insert into KhachHang values(?, ?, ?, ?, ?, ?, ?)";
         update(sql, model.getId(), model.getHoTen(), model.getDiaChi(), model.getSoDT(), model.isGioiTinh(), model.getNgaySinh(), model.getEmail());
     }
+    public void update(CustomerModel model){
+        String sql = "update KhachHang set hoTen=?, diaChi=?, soDT=?, email=? where id_KH=?";
+        update(sql, model.getHoTen(), model.getDiaChi(), model.getSoDT(), model.getEmail(),model.getId());
+    }
+    public void delete(String id){
+         String sql = "DELETE FROM KhachHang WHERE id_KH=?";
+         update(sql, id);
+     }
 }

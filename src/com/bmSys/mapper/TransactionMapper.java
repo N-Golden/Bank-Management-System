@@ -20,6 +20,7 @@ public class TransactionMapper implements IRowMapper<TransactionModel> {
             model.setNoiDung(rs.getString("noiDung"));
             model.setNameTypeTrans(rs.getString("ten"));
             model.setSoTK(rs.getString("soTK"));
+            model.setId_NV(rs.getString("id_nhanVien"));
             return model;
         } catch (Exception ex) {
             System.out.print(ex);
@@ -36,6 +37,7 @@ public class TransactionMapper implements IRowMapper<TransactionModel> {
         v.add(model.getNoiDung());
         v.add(model.getNameTypeTrans());
         v.add(model.getSoTien());
+        v.add(model.getId_NV());
         return v;
     }
 

@@ -1,9 +1,12 @@
 package com.bmSys.mapper;
 
+import com.bmSys.dao.CustomerDAO;
 import java.sql.ResultSet;
 import com.bmSys.model.CustomerModel;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Vector;
+import javax.swing.table.DefaultTableModel;
 
 public class CustomerMapper implements IRowMapper<CustomerModel> {
 
@@ -33,5 +36,6 @@ public class CustomerMapper implements IRowMapper<CustomerModel> {
         v.add(model.getEmail());
         return v;
     }
+
 
 }

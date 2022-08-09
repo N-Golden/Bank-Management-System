@@ -16,7 +16,16 @@ public class AccountDAO extends AbstractDAO<AccountModel> {
         List<AccountModel> results = query(sql, new AccountMapper(), soTK);
         return results.size() != 0 ? results.get(0) : null;
     }
+    
+    public AccountModel findByIdKH(String idKH){
+        String sql = "select * from TaiKhoan where id_KH=?";
+        return  query(sql, new AccountMapper(), idKH).get(0);
+    }
    
+    public void deleteByIdKH(String id){
+        String sql ="delete from TaiKhoan where id_KH=?";
+        update(sql, id);
+    }
 
     public void updateWithDraw(String soTK, float money){
         String sql = "{call Bank_Account_UpdateMoney(?, ?, Withdraw)}";

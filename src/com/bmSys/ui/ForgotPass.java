@@ -13,8 +13,6 @@ import com.bmSys.utils.MailUtil;
 import com.bmSys.utils.MsgBoxUtil;
 import com.bmSys.utils.PasswordUtil;
 import com.bmSys.utils.Validator;
-import com.bmSys.utils.XDate;
-import java.sql.Timestamp;
 import javax.swing.JOptionPane;
 
 /**
