@@ -24,11 +24,13 @@ import java.util.List;
 
 import com.bmSys.utils.XDate;
 import java.awt.Color;
+import java.awt.Desktop;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.HeadlessException;
 import java.awt.Image;
 import java.io.File;
+import java.io.IOException;
 import java.util.Date;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -100,6 +102,7 @@ public class Home extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         lblDate = new javax.swing.JLabel();
         lblClock = new javax.swing.JLabel();
+        btnHelp = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -177,7 +180,7 @@ public class Home extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bmSys/icon/id-card.png"))); // NOI18N
         jLabel5.setText("Employee ID");
-        pnlemp.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 12, 120, -1));
+        pnlemp.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 120, -1));
 
         txtEID.setEditable(false);
         pnlemp.add(txtEID, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 15, 284, -1));
@@ -211,13 +214,13 @@ public class Home extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bmSys/icon/email.png"))); // NOI18N
         jLabel11.setText("Email             ");
-        pnlemp.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, -1, -1));
+        pnlemp.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, -1, -1));
         pnlemp.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, 286, -1));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bmSys/icon/phone-call.png"))); // NOI18N
         jLabel12.setText("Contact        ");
-        pnlemp.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 380, -1, -1));
+        pnlemp.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, -1, -1));
         pnlemp.add(txtContact, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 380, 286, -1));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -260,8 +263,9 @@ public class Home extends javax.swing.JFrame {
         pnlemp.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(607, 211, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bmSys/icon/password.png"))); // NOI18N
         jLabel9.setText("Password");
-        pnlemp.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, -1, -1));
+        pnlemp.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, -1, -1));
         pnlemp.add(txtUN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 284, -1));
         pnlemp.add(dcBirth, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, 290, -1));
 
@@ -296,6 +300,14 @@ public class Home extends javax.swing.JFrame {
         lblClock.setForeground(new java.awt.Color(255, 255, 255));
         lblClock.setText("jLabel16");
 
+        btnHelp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bmSys/icon/question-mark24.png"))); // NOI18N
+        btnHelp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnHelp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnHelpMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -305,15 +317,17 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(261, 261, 261)
                 .addComponent(lbltitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 184, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 165, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblDate, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblClock, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblClock, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnHelp, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -331,7 +345,10 @@ public class Home extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(lblClock))))
+                            .addComponent(lblClock)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnHelp)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -347,10 +364,10 @@ public class Home extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
+            .addGap(0, 40, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 620, 980, 30));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 620, 980, 40));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -361,10 +378,12 @@ public class Home extends javax.swing.JFrame {
         jLabel2.setText("Menu");
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 210, -1));
 
+        lblLogOut.setBackground(new java.awt.Color(255, 255, 255));
         lblLogOut.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblLogOut.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLogOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bmSys/icon/logout.png"))); // NOI18N
         lblLogOut.setText("Logout");
+        lblLogOut.setOpaque(true);
         lblLogOut.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblLogOutMouseClicked(evt);
@@ -376,12 +395,14 @@ public class Home extends javax.swing.JFrame {
                 lblLogOutMouseExited(evt);
             }
         });
-        jPanel3.add(lblLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 450, 210, 50));
+        jPanel3.add(lblLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 210, 50));
 
+        lblUC.setBackground(new java.awt.Color(255, 255, 255));
         lblUC.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblUC.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblUC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bmSys/icon/user.png"))); // NOI18N
         lblUC.setText("Update Customer");
+        lblUC.setOpaque(true);
         lblUC.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblUCMouseClicked(evt);
@@ -393,12 +414,14 @@ public class Home extends javax.swing.JFrame {
                 lblUCMouseExited(evt);
             }
         });
-        jPanel3.add(lblUC, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 210, 50));
+        jPanel3.add(lblUC, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 210, 50));
 
+        lblUE.setBackground(new java.awt.Color(255, 255, 255));
         lblUE.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblUE.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblUE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bmSys/icon/update.png"))); // NOI18N
         lblUE.setText("Update Employee");
+        lblUE.setOpaque(true);
         lblUE.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblUEMouseClicked(evt);
@@ -410,12 +433,14 @@ public class Home extends javax.swing.JFrame {
                 lblUEMouseExited(evt);
             }
         });
-        jPanel3.add(lblUE, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 210, 50));
+        jPanel3.add(lblUE, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 210, 50));
 
+        lblCE.setBackground(new java.awt.Color(255, 255, 255));
         lblCE.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblCE.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bmSys/icon/add-user.png"))); // NOI18N
         lblCE.setText("Create Employee");
+        lblCE.setOpaque(true);
         lblCE.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblCEMouseClicked(evt);
@@ -427,11 +452,12 @@ public class Home extends javax.swing.JFrame {
                 lblCEMouseExited(evt);
             }
         });
-        jPanel3.add(lblCE, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 210, 50));
+        jPanel3.add(lblCE, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 210, 50));
 
         lblStatistics.setBackground(new java.awt.Color(255, 255, 255));
         lblStatistics.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblStatistics.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblStatistics.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bmSys/icon/data-table.png"))); // NOI18N
         lblStatistics.setText("Statistics");
         lblStatistics.setOpaque(true);
         lblStatistics.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -491,16 +517,18 @@ public class Home extends javax.swing.JFrame {
 
         btnupdate.setBackground(new java.awt.Color(0, 153, 255));
         btnupdate.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnupdate.setForeground(new java.awt.Color(255, 255, 255));
         btnupdate.setText("Update");
         btnupdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnupdateActionPerformed(evt);
             }
         });
-        pnlemplist.add(btnupdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 510, -1, -1));
+        pnlemplist.add(btnupdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 510, -1, -1));
 
         btndel.setBackground(new java.awt.Color(0, 153, 255));
         btndel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btndel.setForeground(new java.awt.Color(255, 255, 255));
         btndel.setText("Delete");
         btndel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -575,16 +603,18 @@ public class Home extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(0, 153, 255));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Update");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        pnlcusomer.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 520, -1, -1));
+        pnlcusomer.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 520, -1, -1));
 
         jButton3.setBackground(new java.awt.Color(0, 153, 255));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Delete");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -649,6 +679,9 @@ public class Home extends javax.swing.JFrame {
         cbbType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Type", "Rút tiền", "Nạp tiền", "Chuyển tiền" }));
         jPanel4.add(cbbType, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, 130, 30));
 
+        btnSearch.setBackground(new java.awt.Color(51, 153, 255));
+        btnSearch.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnSearch.setForeground(new java.awt.Color(255, 255, 255));
         btnSearch.setText("Search");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -660,10 +693,10 @@ public class Home extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel26.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel26.setText("Tiền rút");
+        jLabel26.setText("Withdraw");
 
         jLabel27.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel27.setText("Tiền nạp");
+        jLabel27.setText("Deposit");
 
         lblMoneyNap.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblMoneyNap.setText("000000");
@@ -731,7 +764,7 @@ public class Home extends javax.swing.JFrame {
                     .addGroup(pnlStatisticsLayout.createSequentialGroup()
                         .addGap(48, 48, 48)
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 655, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         pnlStatisticsLayout.setVerticalGroup(
             pnlStatisticsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -744,7 +777,7 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(pnlStatisticsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         getContentPane().add(pnlStatistics, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 770, 560));
@@ -915,6 +948,11 @@ public class Home extends javax.swing.JFrame {
         loadTableFilter();
     }//GEN-LAST:event_btnSearchActionPerformed
 
+    private void btnHelpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHelpMouseClicked
+        // TODO add your handling code here:
+        showHelp();
+    }//GEN-LAST:event_btnHelpMouseClicked
+
     private void init() {
         setLocationRelativeTo(null);
         XDate.showTime(lblDate, "dd/MM/yyyy");
@@ -925,6 +963,14 @@ public class Home extends javax.swing.JFrame {
         tableDesign(tblTrans);
     }
 
+    private void showHelp(){
+        try {
+            Desktop.getDesktop().browse(new File("help/index.html").toURI());
+        } catch (IOException e) {
+            MsgBoxUtil.alert(this, "Instruction file not found");
+        }
+    }
+    
     private void showPanelMenu(JPanel pnl) {
         pnlcusomer.setVisible(false);
         pnlemplist.setVisible(false);
@@ -1198,6 +1244,7 @@ public class Home extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel btnHelp;
     private javax.swing.JButton btnSearch;
     private javax.swing.JButton btndel;
     private javax.swing.JButton btnrefresh;

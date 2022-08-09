@@ -19,6 +19,9 @@ import com.bmSys.utils.XDate;
 import com.toedter.calendar.JDateChooser;
 import java.awt.Color;
 import java.awt.Image;
+import java.awt.Desktop;
+import java.io.File;
+import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.List;
 import javax.swing.ImageIcon;
@@ -68,6 +71,7 @@ public class Home extends javax.swing.JFrame {
         lblDate = new javax.swing.JLabel();
         lblTime = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        btnHelp = new javax.swing.JLabel();
         pnlMenu = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         lblCreateAcc = new javax.swing.JLabel();
@@ -320,18 +324,28 @@ public class Home extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 255));
 
+        btnHelp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bmSys/icon/question-mark24.png"))); // NOI18N
+        btnHelp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnHelp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnHelpMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1130, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 1096, Short.MAX_VALUE)
+                .addComponent(btnHelp, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
+            .addComponent(btnHelp, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 660, 1130, 50));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 660, 1130, 40));
 
         pnlMenu.setBackground(new java.awt.Color(255, 255, 255));
         pnlMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -779,7 +793,7 @@ public class Home extends javax.swing.JFrame {
         pnlCreateAccLayout.setVerticalGroup(
             pnlCreateAccLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlCreateAccLayout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
+                .addContainerGap(31, Short.MAX_VALUE)
                 .addGroup(pnlCreateAccLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlCreateAccLayout.createSequentialGroup()
                         .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1821,7 +1835,7 @@ public class Home extends javax.swing.JFrame {
                         .addGroup(pnlTransaction2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btn_Transaction2_Back, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btn_Transaction2_Print, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         pnlMain.add(pnlTransaction2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 580));
@@ -2115,7 +2129,7 @@ public class Home extends javax.swing.JFrame {
             .addGroup(pnlBalanceEnquiry2Layout.createSequentialGroup()
                 .addGap(98, 98, 98)
                 .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(119, Short.MAX_VALUE))
+                .addContainerGap(129, Short.MAX_VALUE))
         );
 
         pnlMain.add(pnlBalanceEnquiry2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 580));
@@ -2597,6 +2611,11 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         PasswordUtil.showPass(txt_CP_NewPass2, lbl_CP_ShowPass3);
     }//GEN-LAST:event_lbl_CP_ShowPass3MouseClicked
+
+    private void btnHelpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHelpMouseClicked
+        // TODO add your handling code here:
+        showHelp();
+    }//GEN-LAST:event_btnHelpMouseClicked
     DocumentListener dl = new DocumentListener() {
         @Override
         public void insertUpdate(DocumentEvent e) {
@@ -2636,6 +2655,14 @@ public class Home extends javax.swing.JFrame {
         lbl_CP_Username.setText(model.getUsername());
     }
 
+    private void showHelp(){
+        try {
+            Desktop.getDesktop().browse(new File("help/index.html").toURI());
+        } catch (IOException e) {
+            MsgBoxUtil.alert(this, "Instruction file not found");
+        }
+    }
+    
     private void clearCreateAcc() {
         refresh(txt_CreateAcc_Name, txt_CreateAcc_Contact, txt_CreateAcc_Email);
         txt_CreateAcc_Address.setText("");
@@ -3109,6 +3136,7 @@ public class Home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel btnHelp;
     private javax.swing.JButton btnSubmit2;
     private javax.swing.JButton btn_AccHolder_Find;
     private javax.swing.JButton btn_BE2_Back;
