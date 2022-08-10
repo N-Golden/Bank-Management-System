@@ -32,7 +32,7 @@ public class UserThread extends Thread {
             bw = new BufferedWriter(new OutputStreamWriter(s.getOutputStream()));
             clientUsername = br.readLine();
             userThreads.add(this);
-            broadcastMessage("SERVER: " + clientUsername + " entered the chat");
+            broadcastMessage("<html><b>SERVER:  " + clientUsername + " entered the chat</b></html>");
         } catch (IOException ex) {
             System.out.println(ex);
             closeAll(s, br, bw);
