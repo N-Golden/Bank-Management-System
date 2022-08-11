@@ -10,30 +10,30 @@ public class AccountDAO extends AbstractDAO<AccountModel> {
         String sql = "insert into TaiKhoan values(?, ?, ?, ?, ?)";
         update(sql, model.getSoTK(), model.getSoDuTK(), model.getLoaiTK(), model.getId_KH(), model.getEmail());
     }
-    
-    public AccountModel findOne(String  soTK){
+
+    public AccountModel findOne(String soTK) {
         String sql = "select tk.*, kh.hoTen from TaiKhoan tk join KhachHang kh ON tk.id_KH = kh.id_KH where tk.soTK= ?";
         List<AccountModel> results = query(sql, new AccountMapper(), soTK);
         return results.size() != 0 ? results.get(0) : null;
     }
-    
-    public AccountModel findByIdKH(String idKH){
+
+    public AccountModel findByIdKH(String idKH) {
         String sql = "select * from TaiKhoan where id_KH=?";
-        return  query(sql, new AccountMapper(), idKH).get(0);
+        return query(sql, new AccountMapper(), idKH).get(0);
     }
-   
-    public void deleteByIdKH(String id){
-        String sql ="delete from TaiKhoan where id_KH=?";
+
+    public void deleteByIdKH(String id) {
+        String sql = "delete from TaiKhoan where id_KH=?";
         update(sql, id);
     }
 
-    public void updateWithDraw(String soTK, float money){
+    public void updateWithDraw(String soTK, float money) {
         String sql = "{call Bank_Account_UpdateMoney(?, ?, Withdraw)}";
         update(sql, soTK, money);
     }
-    
-        public void updateDeposit(String soTK, float money){
-         String sql = "{call Bank_Account_UpdateMoney(?, ?, Deposit)}";
+
+    public void updateDeposit(String soTK, float money) {
+        String sql = "{call Bank_Account_UpdateMoney(?, ?, Deposit)}";
         update(sql, soTK, money);
     }
 

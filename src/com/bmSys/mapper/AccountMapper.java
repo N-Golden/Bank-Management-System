@@ -19,7 +19,7 @@ public class AccountMapper implements IRowMapper<AccountModel> {
                 model.setTenKH(rs.getString("hoTen"));
                 model.setEmail(rs.getString("email"));
             } catch (Exception e) {
-
+                System.out.println(e);
             }
             return model;
         } catch (SQLException ex) {

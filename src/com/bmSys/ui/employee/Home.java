@@ -21,6 +21,7 @@ import com.toedter.calendar.JDateChooser;
 import java.awt.Color;
 import java.awt.Image;
 import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 import javax.swing.ImageIcon;
 
@@ -43,6 +44,10 @@ public class Home extends javax.swing.JFrame {
     private String email = "";
     public TableRowSorter sorter;
     private EmployeeModel model;
+    AccountDAO acDao = new AccountDAO();
+    EmployeeDAO epDao = new EmployeeDAO();
+    CustomerDAO ctDao = new CustomerDAO();
+    TransactionDAO ttDao = new TransactionDAO();
 
     /**
      * Creates new form EmployeeHomeUI
@@ -289,11 +294,6 @@ public class Home extends javax.swing.JFrame {
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton2MouseClicked(evt);
-            }
-        });
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
             }
         });
 
@@ -1720,6 +1720,7 @@ public class Home extends javax.swing.JFrame {
         jLabel57.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bmSys/icon/calendar.png"))); // NOI18N
         jLabel57.setText(" End Date:");
 
+        txt_Transacion2_EndDate.setFocusable(false);
         txt_Transacion2_EndDate.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
         jPanel15.setBackground(new java.awt.Color(255, 255, 255));
@@ -2396,6 +2397,8 @@ public class Home extends javax.swing.JFrame {
         lblTitle.setText("Transaction");
         txt_Transaction_AccNo.setText("");
         txt_Transaction_AccNo.setBackground(Color.white);
+        txt_Transacion2_StartDate.setDate(new Date());
+        txt_Transacion2_EndDate.setDate(new Date());
     }//GEN-LAST:event_lblTransactionMouseClicked
 
     private void lblCusListMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCusListMouseEntered
@@ -2499,8 +2502,7 @@ public class Home extends javax.swing.JFrame {
             sorter = new TableRowSorter(dtm);
             tblTransaction.setRowSorter(sorter);
 
-            TransactionDAO dao = new TransactionDAO();
-            List<TransactionModel> listTrans = dao.findById(txt_Transaction_AccNo.getText());
+            List<TransactionModel> listTrans = ttDao.findById(txt_Transaction_AccNo.getText());
             for (TransactionModel model : listTrans) {
                 dtm.addRow(new TransactionMapper().mapper(model));
             }
@@ -2619,15 +2621,11 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         // TODO add your handling code here:
-            GroupChat gc = new GroupChat(model);
-            gc.setVisible(true);
-            gc.initClient();
+        GroupChat gc = new GroupChat(model);
+        gc.setVisible(true);
+        gc.initClient();
     }//GEN-LAST:event_jButton2MouseClicked
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-    
     DocumentListener dl = new DocumentListener() {
         @Override
         public void insertUpdate(DocumentEvent e) {
@@ -2773,8 +2771,7 @@ public class Home extends javax.swing.JFrame {
                 newModel.setNgaySinh(txt_CreateAcc_Birth.getDate());
                 newModel.setEmail(txt_CreateAcc_Email.getText());
 
-                CustomerDAO dao = new CustomerDAO();
-                dao.saveOne(newModel);
+                ctDao.saveOne(newModel);
                 renderPanelInfo(newModel);
                 showPanelMenu(pnlCreateAcc2);
             }
@@ -2790,8 +2787,7 @@ public class Home extends javax.swing.JFrame {
             acc.setSoTK(txt_CreateAcc2_AccNo.getText());
             acc.setLoaiTK(txt_CreateAcc2_AccType.getText());
             acc.setEmail(txt_CreateAcc2_Email.getText());
-            AccountDAO dao = new AccountDAO();
-            dao.save(acc);
+            acDao.save(acc);
 
             MsgBoxUtil.alert(this, "Details Inserted");
             email = txt_CreateAcc2_Email.getText();
@@ -2804,10 +2800,9 @@ public class Home extends javax.swing.JFrame {
         txt_CreateAcc2_Name.setText(model.getHoTen());
         txt_CreateAcc2_AccType.setText((String) jComboBox1.getSelectedItem());
         txt_CreateAcc2_Email.setText(model.getEmail());
-        AccountDAO dao = new AccountDAO();
         while (true) {
             int b = (int) (Math.random() * (9999999 - 1111111 + 1) + 1111111);
-            if (dao.findOne(Integer.toString(b)) == null) {
+            if (acDao.findOne(Integer.toString(b)) == null) {
                 txt_CreateAcc2_AccNo.setText(Integer.toString(b));
                 break;
             }
@@ -2862,8 +2857,7 @@ public class Home extends javax.swing.JFrame {
                 try {
                     String soTK = txt_Withdraw2_AccNo.getText();
                     float money = Float.valueOf(txt_Withdraw2_WithDraw.getText());
-                    AccountDAO dao = new AccountDAO();
-                    dao.updateWithDraw(soTK, money);
+                    acDao.updateWithDraw(soTK, money);
                     MsgBoxUtil.alert(this, "Money withdraw");
 
                     saveTransaction("Withdraw money", money, 1, "Withdraw at the bank", soTK, "-");
@@ -2881,10 +2875,9 @@ public class Home extends javax.swing.JFrame {
                 try {
                     String soTK = txt_Deposit2_AccNo.getText();
                     float money = Float.valueOf(txt_Deposit2_Amount.getText());
-                    AccountDAO dao = new AccountDAO();
-                    dao.updateDeposit(soTK, money);
+                    acDao.updateDeposit(soTK, money);
                     JOptionPane.showMessageDialog(this, "Money deposit");
-                    saveTransaction("Deposit money", money, 1, "Deposit at the bank", soTK, "+");
+                    saveTransaction("Deposit money", money, 3, "Deposit at the bank", soTK, "+");
                 } catch (Exception e) {
                     System.out.println(e);
                 }
@@ -2904,10 +2897,8 @@ public class Home extends javax.swing.JFrame {
     }
 
     private void renderNewId() {
-        CustomerDAO dao = new CustomerDAO();
         String new_id = "";
-
-        String id = dao.findOne().getId();
+        String id = ctDao.findOne().getId();
         int id_num = Integer.valueOf(id.split("_")[1]);
 
         if (id_num + 1 < 10) {
@@ -2925,17 +2916,19 @@ public class Home extends javax.swing.JFrame {
         table.setRowSorter(sorter);
 
         if (table == tblCustomer) {
-            CustomerDAO ctDao = new CustomerDAO();
             List<CustomerModel> listCust = ctDao.findAll();
             for (CustomerModel cus : listCust) {
                 dtm.addRow(new CustomerMapper().mapper(cus));
             }
         } else if (table == tblTransaction) {
-            TransactionDAO transDao = new TransactionDAO();
-            List<TransactionModel> listTrans;
-            listTrans = transDao.findList(dateChoosers[0].getDate(), dateChoosers[1].getDate());
-            for (TransactionModel trans : listTrans) {
-                dtm.addRow(new TransactionMapper().mapper(trans));
+            try {
+                List<TransactionModel> listTrans;
+                listTrans = ttDao.findList(txt_Trans2_AccNo.getText(), dateChoosers[0].getDate(), dateChoosers[1].getDate());
+                for (TransactionModel trans : listTrans) {
+                    dtm.addRow(new TransactionMapper().mapper(trans));
+                }
+            } catch (Exception e) {
+                System.out.print(e);
             }
         }
     }
@@ -2952,7 +2945,6 @@ public class Home extends javax.swing.JFrame {
 
     private void saveTransaction(String sub, Float money, int loaiGD, String noiDung, String soTK, String isPlus) {
         // update db
-        TransactionDAO dao = new TransactionDAO();
         TransactionModel model = new TransactionModel();
         model.setNgayGd(new Timestamp(XDate.now().getTime()));
         model.setSoTien(money);
@@ -2960,7 +2952,7 @@ public class Home extends javax.swing.JFrame {
         model.setLoaiGD(loaiGD);
         model.setNoiDung(noiDung);
         model.setSoTK(soTK);
-        dao.save(model);
+        ttDao.save(model);
 
         try {
             sendMail(sub, soTK, isPlus, money, noiDung);
@@ -2993,8 +2985,7 @@ public class Home extends javax.swing.JFrame {
 
     private String findAccount(JTextField soTK, JPanel view, JTextField... arrTf) {
         try {
-            AccountDAO dao = new AccountDAO();
-            AccountModel model = dao.findOne(soTK.getText());
+            AccountModel model = acDao.findOne(soTK.getText());
             fillTextFiled(model, arrTf);
             showPanelMenu(view);
             return model.getEmail();
@@ -3023,8 +3014,7 @@ public class Home extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "AccHolder Acc No cannot be null!");
         } else {
             try {
-                AccountDAO accDao = new AccountDAO();
-                AccountModel acc = accDao.findOne(txt_AccHolder_AccNo.getText());
+                AccountModel acc = acDao.findOne(txt_AccHolder_AccNo.getText());
                 txt_AccHolder_Name.setText(acc.getTenKH());
                 txt_AccHolder_AccType.setText(acc.getLoaiTK());
                 txt_AccHolder_Balance.setText(String.valueOf(acc.getSoDuTK()));
@@ -3042,8 +3032,7 @@ public class Home extends javax.swing.JFrame {
                 MsgBoxUtil.alert(null, "AccHolder and Beneficiary Acc cannot be same!");
             } else {
                 try {
-                    AccountDAO accDao = new AccountDAO();
-                    AccountModel acc = accDao.findOne(txt_Beneficiary_AccNo.getText());
+                    AccountModel acc = acDao.findOne(txt_Beneficiary_AccNo.getText());
                     txt_Beneficiary_Name.setText(acc.getTenKH());
                     txt_Beneficiary_AccType.setText(acc.getLoaiTK());
                     txt_Beneficiary_Balance.setText(String.valueOf(acc.getSoDuTK()));
@@ -3061,13 +3050,12 @@ public class Home extends javax.swing.JFrame {
             MsgBoxUtil.alert(null, "Transfer money must be lower than balance!");
         } else {
             if (MsgBoxUtil.confirm(null, "Are you sure?")) {
-                AccountDAO dao = new AccountDAO();
-                dao.updateWithDraw(txt_AccHolder_AccNo.getText(), amount);
-                dao.updateDeposit(txt_Beneficiary_AccNo.getText(), amount);
+                acDao.updateWithDraw(txt_AccHolder_AccNo.getText(), amount);
+                acDao.updateDeposit(txt_Beneficiary_AccNo.getText(), amount);
                 MsgBoxUtil.alert(null, "Transfer money successful!");
 
-                email = dao.findOne(txt_AccHolder_AccNo.getText()).getEmail();
-                saveTransaction("Transfer money", amount, 2, txt_AccHolder_AccNo.getText() + " transfer money", txt_AccHolder_Name.getText(), "-");
+                email = acDao.findOne(txt_AccHolder_AccNo.getText()).getEmail();
+                saveTransaction("Transfer money", amount, 2, " Transfer money at the bank", txt_AccHolder_AccNo.getText(), "-");
 
             }
         }
@@ -3084,8 +3072,7 @@ public class Home extends javax.swing.JFrame {
     private void logOut() {
         boolean b = MsgBoxUtil.confirm(this, "Do you want to logout?");
         if (b) {
-            EmployeeDAO dao = new EmployeeDAO();
-            dao.updateLastLogin(XDate.now(), lblEmployee.getText());
+            epDao.updateLastLogin(XDate.now(), lblEmployee.getText());
             this.dispose();
             Login login = new Login();
             login.setVisible(true);
@@ -3125,10 +3112,9 @@ public class Home extends javax.swing.JFrame {
             boolean a = MsgBoxUtil.confirm(this, "Do you want to change password?");
             if (a) {
                 try {
-                    EmployeeDAO edao = new EmployeeDAO();
                     String newPass = txt_CP_NewPass.getText();
                     model.setPassword(newPass);
-                    edao.update(model);
+                    epDao.update(model);
                     MsgBoxUtil.alert(this, "Change password successfully!");
                     refresh(txt_CP_CurrentPass, txt_CP_NewPass, txt_CP_NewPass2);
                 } catch (Exception e) {
