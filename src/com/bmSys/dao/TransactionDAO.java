@@ -17,8 +17,7 @@ public class TransactionDAO extends AbstractDAO<TransactionModel> {
     }
 
     public List<TransactionModel> findList(String soTK, Date... day) {
-        String sql;
-        sql = "{call Bank_Transaction_GetList(?, ?, ?)}";
+        String sql = "{call Bank_Transaction_GetList(?, ?, ?)}";
         return query(sql, new TransactionMapper(), day[0], day[1], soTK);
 
     }
@@ -38,7 +37,7 @@ public class TransactionDAO extends AbstractDAO<TransactionModel> {
         if (id.length() == 0) {
             id = "";
         }
-        if (type.equals("Type")) {
+        if (type.equals("All")) {
             type = "";
         }
         if (day == null) {

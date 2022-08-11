@@ -27,14 +27,9 @@ public class AccountDAO extends AbstractDAO<AccountModel> {
         update(sql, id);
     }
 
-    public void updateWithDraw(String soTK, float money) {
-        String sql = "{call Bank_Account_UpdateMoney(?, ?, Withdraw)}";
-        update(sql, soTK, money);
-    }
-
-    public void updateDeposit(String soTK, float money) {
-        String sql = "{call Bank_Account_UpdateMoney(?, ?, Deposit)}";
-        update(sql, soTK, money);
+    public void updateMoney(String soTK, float money, String type) {
+        String sql = "{call Bank_Account_UpdateMoney(?, ?, ?)}";
+        update(sql, soTK, money, type);
     }
 
 }

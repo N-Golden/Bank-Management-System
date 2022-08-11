@@ -1703,7 +1703,7 @@ public class Home extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "ACC_NO", "DATED", "DETAILS", "TYPE", "MONEY"
+                "ID", "ACC_NO", "DATED", "DETAILS", "TYPE", "AMOUNT"
             }
         ));
         jScrollPane2.setViewportView(tblTransaction);
@@ -2350,8 +2350,7 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         showPanelMenu(pnlWithdraw);
         lblTitle.setText("Withdraw");
-        txt_Withdraw_AccNo.setText("");
-        txt_Withdraw_AccNo.setBackground(Color.white);
+        refresh(txt_Withdraw_AccNo);
     }//GEN-LAST:event_lblWithdrawMouseClicked
 
     private void lblDepositMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblDepositMouseEntered
@@ -2368,8 +2367,7 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         showPanelMenu(pnlDeposit);
         lblTitle.setText("Deposit");
-        txt_Deposit_AccNo.setText("");
-        txt_Deposit_AccNo.setBackground(Color.white);
+        refresh(txt_Deposit_AccNo);
     }//GEN-LAST:event_lblDepositMouseClicked
 
     private void lblTransferMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTransferMouseEntered
@@ -2386,10 +2384,8 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         showPanelMenu(pnlTransfer);
         lblTitle.setText("Transfer");
-        txt_AccHolder_AccNo.setText("");
-        txt_AccHolder_AccNo.setBackground(Color.white);
-        txt_Beneficiary_AccNo.setText("");
-        txt_Beneficiary_AccNo.setBackground(Color.white);
+        refresh(txt_AccHolder_AccNo,txt_AccHolder_Name,txt_AccHolder_AccType,txt_AccHolder_Balance,txt_AccHolder_TransferMoney,
+                txt_Beneficiary_AccNo,txt_Beneficiary_Name,txt_Beneficiary_AccType,txt_Beneficiary_Balance);
     }//GEN-LAST:event_lblTransferMouseClicked
 
     private void lblTransactionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTransactionMouseEntered
@@ -2406,8 +2402,7 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         showPanelMenu(pnlTransaction);
         lblTitle.setText("Transaction");
-        txt_Transaction_AccNo.setText("");
-        txt_Transaction_AccNo.setBackground(Color.white);
+        refresh(txt_Transaction_AccNo);
     }//GEN-LAST:event_lblTransactionMouseClicked
 
     private void lblCusListMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCusListMouseEntered
@@ -2441,8 +2436,7 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         showPanelMenu(pnlBalanceEnquiry);
         lblTitle.setText("Balance Enquiry");
-        txt_BalanceEnquiry_AccNo.setText("");
-        txt_BalanceEnquiry_AccNo.setBackground(Color.white);
+        refresh(txt_BalanceEnquiry_AccNo);
     }//GEN-LAST:event_lblBalanceEnquiryMouseClicked
 
     private void lblLogoutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLogoutMouseEntered
@@ -2566,9 +2560,8 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_Beneficiary_FindActionPerformed
 
     private void btn_Transfer_RefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Transfer_RefreshActionPerformed
-
-        refresh(txt_AccHolder_AccNo, txt_AccHolder_Name, txt_AccHolder_AccType, txt_AccHolder_Balance, txt_AccHolder_TransferMoney, txt_Transaction_AccNo, txt_Beneficiary_AccNo, txt_Beneficiary_Name, txt_Beneficiary_AccType, txt_Beneficiary_Balance);
-
+        refresh(txt_AccHolder_AccNo, txt_AccHolder_Name, txt_AccHolder_AccType, txt_AccHolder_Balance, txt_AccHolder_TransferMoney, 
+                txt_Transaction_AccNo, txt_Beneficiary_AccNo, txt_Beneficiary_Name, txt_Beneficiary_AccType, txt_Beneficiary_Balance);
     }//GEN-LAST:event_btn_Transfer_RefreshActionPerformed
 
     private void btn_Transfer_SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Transfer_SubmitActionPerformed
@@ -2879,7 +2872,7 @@ public class Home extends javax.swing.JFrame {
                 try {
                     String soTK = txt_Withdraw2_AccNo.getText();
                     float money = Float.valueOf(txt_Withdraw2_WithDraw.getText());
-                    acDao.updateWithDraw(soTK, money);
+                    acDao.updateMoney(soTK, money, "Withdraw");
                     MsgBoxUtil.alert(this, "Money withdraw");
 
                     saveTransaction("Withdraw money", money, 1, "Withdraw at the bank", soTK, "-");
@@ -2897,9 +2890,9 @@ public class Home extends javax.swing.JFrame {
                 try {
                     String soTK = txt_Deposit2_AccNo.getText();
                     float money = Float.valueOf(txt_Deposit2_Amount.getText());
-                    acDao.updateDeposit(soTK, money);
+                    acDao.updateMoney(soTK, money, "Deposit");
                     JOptionPane.showMessageDialog(this, "Money deposit");
-                    saveTransaction("Deposit money", money, 1, "Deposit at the bank", soTK, "+");
+                    saveTransaction("Deposit money", money, 3, "Deposit at the bank", soTK, "+");
                 } catch (Exception e) {
                     System.out.println(e);
                 }
@@ -3073,12 +3066,12 @@ public class Home extends javax.swing.JFrame {
             MsgBoxUtil.alert(null, "Transfer money must be lower than balance!");
         } else {
             if (MsgBoxUtil.confirm(null, "Are you sure?")) {
-                acDao.updateWithDraw(txt_AccHolder_AccNo.getText(), amount);
-                acDao.updateDeposit(txt_Beneficiary_AccNo.getText(), amount);
+                acDao.updateMoney(txt_AccHolder_AccNo.getText(), amount, "Withdraw");
+                acDao.updateMoney(txt_Beneficiary_AccNo.getText(), amount, "Deposit");
                 MsgBoxUtil.alert(null, "Transfer money successful!");
 
                 email = acDao.findOne(txt_AccHolder_AccNo.getText()).getEmail();
-                saveTransaction("Transfer money", amount, 2, " Transfer money at the bank", txt_AccHolder_AccNo.getText(), "-");
+                saveTransaction("Transfer money", amount, 2, "Transfer at the bank", txt_AccHolder_AccNo.getText(), "-");
             }
         }
     }
