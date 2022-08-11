@@ -4,6 +4,7 @@
  */
 package com.bmSys.groupChat;
 
+import com.bmSys.model.EmployeeModel;
 import java.io.IOException;
 import java.net.Socket;
 import javax.swing.DefaultListModel;
@@ -17,12 +18,14 @@ public class GroupChat extends javax.swing.JFrame {
     private DefaultListModel<String> JlistModel = new DefaultListModel<>();
     private Client client;
     private Socket socket;
+    private String nameEmployee;
 
     /**
      * Creates new form GroupChat
      */
-    public GroupChat() {
+    public GroupChat(EmployeeModel model) {
         initComponents();
+        this.nameEmployee = model.getHoTen();
     }
 
     /**
@@ -102,19 +105,12 @@ public class GroupChat extends javax.swing.JFrame {
         // TODO add your handling code here:
 
     }//GEN-LAST:event_btnSendMouseClicked
-    public static void main(String[] args) {
-        GroupChat gc = new GroupChat();
-        gc.setVisible(true);
-        gc.initClient();
-
-    }
 
     public void initClient() {
         try {
             socket = new Socket("localhost", 1234);
-            client = new Client(socket, "zz");
+            client = new Client(socket, nameEmployee);
             new ReadThread(client, JlistModel).start();
-
         } catch (IOException ex) {
             System.out.println(ex);
         }

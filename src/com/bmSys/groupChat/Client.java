@@ -30,6 +30,7 @@ public class Client {
             bw.newLine();
             bw.flush();
         } catch (IOException ex) {
+            System.out.println("error");
             System.out.println(ex);
         }
 

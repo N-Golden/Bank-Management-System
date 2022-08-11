@@ -21,7 +21,7 @@ public class Server {
     }
 
     public void startServer() {
-        System.out.println("Server is listening on port" + server.getLocalPort());
+        System.out.println("Server is listening on port " + server.getLocalPort());
         while (true) {
             try {
                 Socket s = server.accept();
