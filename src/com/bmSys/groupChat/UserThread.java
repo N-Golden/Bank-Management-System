@@ -32,7 +32,7 @@ public class UserThread extends Thread {
             bw = new BufferedWriter(new OutputStreamWriter(s.getOutputStream()));
             clientUsername = br.readLine();
             userThreads.add(this);
-            broadcastMessage("SERVER: " + clientUsername + " entered the chat");
+            broadcastMessage("<html><b>SERVER:  " + clientUsername + " entered the chat</b></html>");
         } catch (IOException ex) {
             System.out.println(ex);
             closeAll(s, br, bw);
@@ -48,6 +48,8 @@ public class UserThread extends Thread {
                 broadcastMessage(msgFromClient);
             } catch (IOException e) {
                 System.out.println(e);
+                userThreads.remove(this);
+                broadcastMessage("<html><b>SERVER:  " + clientUsername + " out the chat</b></html>");
                 closeAll(s, br, bw);
                 break;
             }
@@ -75,18 +77,7 @@ public class UserThread extends Thread {
             br.close();
             bw.close();
         } catch (IOException ex) {
-
-        }
-    }
-
-    void sendMessage(String message) {
-        try {
-            bw.write(message);
-            bw.newLine();
-            bw.flush();
-        } catch (IOException ex) {
             System.out.println(ex);
-            closeAll(s, br, bw);
         }
     }
 

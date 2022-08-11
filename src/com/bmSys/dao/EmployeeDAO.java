@@ -19,16 +19,16 @@ public class EmployeeDAO extends AbstractDAO<EmployeeModel> {
 
     public void saveOne(EmployeeModel model) {
         String sql = "Insert into NhanVien values(?, ?, ?, ?, ? ,?, ?, ?, ?, ?)";
-        update(sql, model.getId(), model.getHoTen(), model.getDiaChi(), model.getSoDT(),model.getLinkImg(),
-                 model.getNgaySinh(), model.getEmail(), model.getUsername(), model.getPassword(), new Date());
+        update(sql, model.getId(), model.getHoTen(), model.getDiaChi(), model.getSoDT(), model.getLinkImg(),
+                model.getNgaySinh(), model.getEmail(), model.getUsername(), model.getPassword(), new Date());
     }
 
     public EmployeeModel findOne() {
         String sql = "select TOP 1 * from NhanVien ORDER BY id_nhanVien DESC";
         return query(sql, new EmployeeMapper()).get(0);
     }
-    
-    public EmployeeModel findByUsername(String username){
+
+    public EmployeeModel findByUsername(String username) {
         String sql = "select * from NhanVien where username=?";
         List<EmployeeModel> list = this.query(sql, new EmployeeMapper(), username);
         if (list.isEmpty()) {
@@ -36,14 +36,14 @@ public class EmployeeDAO extends AbstractDAO<EmployeeModel> {
         }
         return list.get(0);
     }
-    
-    public void update(EmployeeModel model){
+
+    public void update(EmployeeModel model) {
         String sql = "update NhanVien set hoTen=?, diaChi=?, soDT=?, email=?, password=? where id_nhanVien=?";
-        update(sql, model.getHoTen(), model.getDiaChi(), model.getSoDT(), model.getEmail(),model.getPassword(), model.getId());
+        update(sql, model.getHoTen(), model.getDiaChi(), model.getSoDT(), model.getEmail(), model.getPassword(), model.getId());
     }
-    
-    public void delete(String id){
-         String sql = "DELETE FROM NhanVien WHERE id_nhanVien=?";
-         update(sql, id);
-     }
+
+    public void delete(String id) {
+        String sql = "DELETE FROM NhanVien WHERE id_nhanVien=?";
+        update(sql, id);
+    }
 }

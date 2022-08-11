@@ -74,7 +74,7 @@ public class AbstractDAO<T> {
         if (conc != null) {
             try {
                 conc.setAutoCommit(false);
-                    if (sql.startsWith("{")) {
+                if (sql.startsWith("{")) {
                     statement = conc.prepareCall(sql);
                 } else {
                     statement = conc.prepareStatement(sql);

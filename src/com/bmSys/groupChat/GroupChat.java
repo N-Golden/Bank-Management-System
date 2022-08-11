@@ -4,10 +4,9 @@
  */
 package com.bmSys.groupChat;
 
+import com.bmSys.model.EmployeeModel;
 import java.io.IOException;
 import java.net.Socket;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 
 /**
@@ -16,14 +15,17 @@ import javax.swing.DefaultListModel;
  */
 public class GroupChat extends javax.swing.JFrame {
 
-    DefaultListModel<String> JlistModel = new DefaultListModel<>();
-    Boolean isClick = false;
+    private DefaultListModel<String> JlistModel = new DefaultListModel<>();
+    private Client client;
+    private Socket socket;
+    private String nameEmployee;
 
     /**
      * Creates new form GroupChat
      */
-    public GroupChat() {
+    public GroupChat(EmployeeModel model) {
         initComponents();
+        this.nameEmployee = model.getHoTen();
     }
 
     /**
@@ -42,15 +44,15 @@ public class GroupChat extends javax.swing.JFrame {
         listChat = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Group Chat");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        textSend.setText("jTextField1");
         textSend.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textSendActionPerformed(evt);
             }
         });
-        getContentPane().add(textSend, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 290, -1));
+        getContentPane().add(textSend, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, 330, -1));
 
         btnSend.setText("Send");
         btnSend.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -63,8 +65,9 @@ public class GroupChat extends javax.swing.JFrame {
                 btnSendActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSend, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, -1, -1));
+        getContentPane().add(btnSend, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 460, -1, -1));
 
+        listChat.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         listChat.setModel(JlistModel);
         jScrollPane2.setViewportView(listChat);
 
@@ -73,22 +76,25 @@ public class GroupChat extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 438, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 260));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 440));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendActionPerformed
         // TODO add your handling code here:
-        confirm();
+        sendMsg();
+
+
     }//GEN-LAST:event_btnSendActionPerformed
 
     private void textSendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textSendActionPerformed
@@ -99,34 +105,19 @@ public class GroupChat extends javax.swing.JFrame {
         // TODO add your handling code here:
 
     }//GEN-LAST:event_btnSendMouseClicked
-    public static void main(String[] args) {
-        GroupChat gc = new GroupChat();
-        gc.setVisible(true);
-        gc.initClient();
-
-    }
 
     public void initClient() {
-        Socket socket;
         try {
             socket = new Socket("localhost", 1234);
-            Client client = new Client(socket, "bbb");
-            client.listenMessServer(JlistModel);
-            client.sendMess(isClick, textSend);
-
+            client = new Client(socket, nameEmployee);
+            new ReadThread(client, JlistModel).start();
         } catch (IOException ex) {
-            Logger.getLogger(GroupChat.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex);
         }
-
     }
 
-    synchronized void confirm() {
-        if (!isClick) {
-            isClick = true;
-        } else {
-            isClick = false;
-        }
-        notify();
+    public void sendMsg() {
+        new SendThread(client, textSend, JlistModel).start();
     }
 
 

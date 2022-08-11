@@ -13,7 +13,6 @@ import com.bmSys.dao.TransactionDAO;
 import com.bmSys.mapper.CustomerMapper;
 import com.bmSys.mapper.EmployeeMapper;
 import com.bmSys.mapper.TransactionMapper;
-import com.bmSys.model.AccountModel;
 import com.bmSys.model.CustomerModel;
 import com.bmSys.model.EmployeeModel;
 import com.bmSys.model.TransactionModel;
@@ -31,7 +30,6 @@ import java.awt.HeadlessException;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
-import java.util.Date;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
@@ -39,9 +37,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
-import javax.swing.RowFilter;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
@@ -54,6 +49,10 @@ public class Home extends javax.swing.JFrame {
 
     private String pathImg = "";
     private TableRowSorter sorter;
+    AccountDAO acDao = new AccountDAO();
+    EmployeeDAO epDao = new EmployeeDAO();
+    CustomerDAO ctDao = new CustomerDAO();
+    TransactionDAO ttDao = new TransactionDAO();
 
     /**
      * Creates new form AdminHome
@@ -963,14 +962,14 @@ public class Home extends javax.swing.JFrame {
         tableDesign(tblTrans);
     }
 
-    private void showHelp(){
+    private void showHelp() {
         try {
             Desktop.getDesktop().browse(new File("help/index.html").toURI());
         } catch (IOException e) {
             MsgBoxUtil.alert(this, "Instruction file not found");
         }
     }
-    
+
     private void showPanelMenu(JPanel pnl) {
         pnlcusomer.setVisible(false);
         pnlemplist.setVisible(false);
@@ -1020,20 +1019,17 @@ public class Home extends javax.swing.JFrame {
         dtm.setRowCount(0);
 
         if (table == tbllistemp) {
-            EmployeeDAO ctDao = new EmployeeDAO();
-            List<EmployeeModel> listemp = ctDao.findAll();
+            List<EmployeeModel> listemp = epDao.findAll();
             for (EmployeeModel emp : listemp) {
                 dtm.addRow(new EmployeeMapper().mapper(emp));
             }
         } else if (table == tblcust) {
-            CustomerDAO ctDao = new CustomerDAO();
             List<CustomerModel> listCust = ctDao.findAll();
             for (CustomerModel cus : listCust) {
                 dtm.addRow(new CustomerMapper().mapper(cus));
             }
         } else if (table == tblTrans) {
-            TransactionDAO trDao = new TransactionDAO();
-            List<TransactionModel> listTrans = trDao.findAll();
+            List<TransactionModel> listTrans = ttDao.findAll();
             for (TransactionModel model : listTrans) {
                 dtm.addRow(new TransactionMapper().mapper(model));
             }
@@ -1058,8 +1054,7 @@ public class Home extends javax.swing.JFrame {
         if (MsgBoxUtil.confirm(this, "Do you want to delete?")) {
             String id = txtid_empl.getText();
             try {
-                EmployeeDAO dao = new EmployeeDAO();
-                dao.delete(id);
+                epDao.delete(id);
                 this.loadDataToTable(tbllistemp);
                 MsgBoxUtil.alert(this, "Delete Succesfully!");
             } catch (HeadlessException e) {
@@ -1083,8 +1078,8 @@ public class Home extends javax.swing.JFrame {
                 newModel.setUsername(txtUN1.getText());
                 newModel.setPassword(txtUN.getText());
                 newModel.setLinkImg(pathImg);
-                EmployeeDAO dao = new EmployeeDAO();
-                dao.saveOne(newModel);
+
+                epDao.saveOne(newModel);
 
             }
         }
@@ -1099,8 +1094,8 @@ public class Home extends javax.swing.JFrame {
             Model.setSoDT(txtphone_empl.getText());
             Model.setEmail(txtemail_empl.getText());
             Model.setId(txtid_empl.getText());
-            EmployeeDAO dao = new EmployeeDAO();
-            dao.update(Model);
+  
+            epDao.update(Model);
             this.loadDataToTable(tbllistemp);
         }
     }
@@ -1114,8 +1109,7 @@ public class Home extends javax.swing.JFrame {
             Model.setSoDT(txtphone_cust.getText());
             Model.setEmail(txtemail_cust.getText());
             Model.setId(txtid_cust.getText());
-            CustomerDAO dao = new CustomerDAO();
-            dao.update(Model);
+            ctDao.update(Model);
             this.loadDataToTable(tblcust);
         }
     }
@@ -1124,13 +1118,10 @@ public class Home extends javax.swing.JFrame {
         if (MsgBoxUtil.confirm(this, "Do you want to delete this Customer?")) {
             String id = txtid_cust.getText();
             try {
-                AccountDAO acDao = new AccountDAO();
                 String soTK = acDao.findByIdKH(id).getSoTK();
-                TransactionDAO trDao = new TransactionDAO();
-                trDao.deleteBySoTK(soTK);
+                ttDao.deleteBySoTK(soTK);
                 acDao.deleteByIdKH(id);
-                CustomerDAO dao = new CustomerDAO();
-                dao.delete(id);
+                ctDao.delete(id);
                 this.loadDataToTable(tblcust);
                 MsgBoxUtil.alert(this, "Delete Succesfully!");
             } catch (HeadlessException e) {
@@ -1177,10 +1168,9 @@ public class Home extends javax.swing.JFrame {
     }
 
     private void renderNewId() {
-        EmployeeDAO dao = new EmployeeDAO();
         String new_id = "";
 
-        String id = dao.findOne().getId();
+        String id = epDao.findOne().getId();
         int id_num = Integer.valueOf(id.split("_")[1].substring(0, 3));
 
         if (id_num + 1 < 10) {
@@ -1210,8 +1200,7 @@ public class Home extends javax.swing.JFrame {
     public void loadTableFilter() {
         DefaultTableModel dtm = (DefaultTableModel) tblTrans.getModel();
         dtm.setRowCount(0);
-        TransactionDAO dao = new TransactionDAO();
-        List<TransactionModel> listTrans = dao.findMany(txtFindID.getText(), dcDate.getDate(), (String) cbbType.getSelectedItem());
+        List<TransactionModel> listTrans = ttDao.findMany(txtFindID.getText(), dcDate.getDate(), (String) cbbType.getSelectedItem());
         for (TransactionModel model : listTrans) {
             dtm.addRow(new TransactionMapper().mapper(model));
         }
@@ -1222,12 +1211,12 @@ public class Home extends javax.swing.JFrame {
         float moneyNap = 0;
         float moneyRut = 0;
         int numRow = tblTrans.getRowCount();
-        for(int i=0;i<numRow;i++){
+        for (int i = 0; i < numRow; i++) {
             String type = tblTrans.getValueAt(i, 4).toString();
-            if(type.startsWith("R")){
-                moneyRut += Float.valueOf(tblTrans.getValueAt(i,5).toString());
-            }else if(type.startsWith("N")){
-                moneyNap += Float.valueOf(tblTrans.getValueAt(i,5).toString());
+            if (type.startsWith("R")) {
+                moneyRut += Float.valueOf(tblTrans.getValueAt(i, 5).toString());
+            } else if (type.startsWith("N")) {
+                moneyNap += Float.valueOf(tblTrans.getValueAt(i, 5).toString());
             }
         }
         lblMoneyNap.setText(Float.toString(moneyNap));

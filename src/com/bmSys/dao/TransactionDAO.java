@@ -16,39 +16,39 @@ public class TransactionDAO extends AbstractDAO<TransactionModel> {
         update(sql, model.getNgayGd(), model.getSoTien(), model.getNoiDung(), model.getSoTK_nguoiNhan(), model.getId_NV(), model.getLoaiGD(), model.getSoTK());
     }
 
-    public List<TransactionModel> findList(Date... day) {
+    public List<TransactionModel> findList(String soTK, Date... day) {
         String sql;
-        if (day.length == 0) {
-            sql = "{call Bank_Transaction_GetList()}";
-            return query(sql, new TransactionMapper());
-        } else {
-            sql = "{call Bank_Transaction_GetList(?, ?)}";
-            return query(sql, new TransactionMapper(), day[0], day[1]);
-        }
+        sql = "{call Bank_Transaction_GetList(?, ?, ?)}";
+        return query(sql, new TransactionMapper(), day[0], day[1], soTK);
+
     }
 
     public List<TransactionModel> findById(String id) {
-      String sql = "select gd.*, lgd.ten from GiaoDich gd join loaiGD lgd on gd.loaiGD = lgd.id_loaiGD  where gd.soTK = ?";
-      return  query(sql, new TransactionMapper(), id);
+        String sql = "select gd.*, lgd.ten from GiaoDich gd join loaiGD lgd on gd.loaiGD = lgd.id_loaiGD  where gd.soTK = ?";
+        return query(sql, new TransactionMapper(), id);
     }
-    
-    public List<TransactionModel> findAll(){
+
+    public List<TransactionModel> findAll() {
         String sql = "select * from GiaoDich gd join loaiGD lgd on gd.loaiGD = lgd.id_loaiGD";
         return query(sql, new TransactionMapper());
     }
-    
-    public List<TransactionModel> findMany(String id, Date day, String type){
-        String  sql = "{call Bank_Transaction_GetMany(?, ?, ?)}";
-        if(id.length() == 0 ) id = "";
-        if(type.equals("Type") ) type = "";
-        if(day == null) {
+
+    public List<TransactionModel> findMany(String id, Date day, String type) {
+        String sql = "{call Bank_Transaction_GetMany(?, ?, ?)}";
+        if (id.length() == 0) {
+            id = "";
+        }
+        if (type.equals("Type")) {
+            type = "";
+        }
+        if (day == null) {
             return query(sql, new TransactionMapper(), id, "", type);
-        }else{
+        } else {
             return query(sql, new TransactionMapper(), id, day, type);
         }
     }
-    
-    public void deleteBySoTK(String soTK){
+
+    public void deleteBySoTK(String soTK) {
         String sql = "delete from GIaoDich where soTK=?";
         update(sql, soTK);
     }

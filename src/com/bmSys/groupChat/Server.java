@@ -1,4 +1,4 @@
-/*
+    /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -21,7 +21,7 @@ public class Server {
     }
 
     public void startServer() {
-        System.out.println("Server is listening on port" + server.getLocalPort());
+        System.out.println("Server is listening on port " + server.getLocalPort());
         while (true) {
             try {
                 Socket s = server.accept();
