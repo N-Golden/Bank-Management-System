@@ -43,7 +43,7 @@ public class GroupChat extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         listChat = new javax.swing.JList<>();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Group Chat");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -108,7 +108,7 @@ public class GroupChat extends javax.swing.JFrame {
 
     public void initClient() {
         try {
-            socket = new Socket("localhost", 1234);
+            socket = new Socket("10.82.177.29", 1234);
             client = new Client(socket, nameEmployee);
             new ReadThread(client, JlistModel).start();
         } catch (IOException ex) {
