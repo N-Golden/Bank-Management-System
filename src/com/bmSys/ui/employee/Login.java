@@ -6,6 +6,7 @@ import com.bmSys.ui.Loading;
 import com.bmSys.ui.ForgotPass;
 import com.bmSys.utils.PasswordUtil;
 import com.bmSys.utils.Validator;
+import com.bmSys.utils.XImage;
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -15,9 +16,9 @@ public class Login extends javax.swing.JFrame {
      * Creates new form NewJFrame
      */
     public Login() {
-
         initComponents();
         setLocationRelativeTo(null);
+        setIconImage(XImage.getAppIcon());
     }
 
     @SuppressWarnings("unchecked")
@@ -176,28 +177,28 @@ public class Login extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Banking Management System");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bmSys/icon/manager.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bmSys/icon/administrator.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(21, 21, 21)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addComponent(jLabel3)))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(90, 90, 90)
+                .addGap(119, 119, 119)
                 .addComponent(jLabel3)
-                .addGap(47, 47, 47)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1)
                 .addContainerGap(218, Short.MAX_VALUE))
         );

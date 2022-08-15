@@ -5,6 +5,7 @@
  */
 package com.bmSys.ui;
 
+import com.bmSys.utils.XImage;
 import java.awt.Color;
 
 import java.awt.event.ActionEvent;
@@ -38,6 +39,7 @@ public class Loading extends javax.swing.JDialog {
         pgbLoading = new javax.swing.JProgressBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("LOADING");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -48,7 +50,6 @@ public class Loading extends javax.swing.JDialog {
 
         pgbLoading.setBackground(new java.awt.Color(255, 255, 255));
         pgbLoading.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        pgbLoading.setOpaque(false);
         pgbLoading.setStringPainted(true);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -95,6 +96,7 @@ public class Loading extends javax.swing.JDialog {
 
     private void init() {
         this.setLocationRelativeTo(null);
+        this.setIconImage(XImage.getAppIcon());
         new Timer(50, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {

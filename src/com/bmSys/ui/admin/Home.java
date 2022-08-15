@@ -22,6 +22,7 @@ import com.bmSys.utils.Validator;
 import java.util.List;
 
 import com.bmSys.utils.XDate;
+import com.bmSys.utils.XImage;
 import java.awt.Color;
 import java.awt.Desktop;
 import java.awt.Dimension;
@@ -170,6 +171,7 @@ public class Home extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("HOME");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnlemp.setBackground(new java.awt.Color(255, 255, 255));
@@ -1059,6 +1061,7 @@ public class Home extends javax.swing.JFrame {
 
     private void init() {
         setLocationRelativeTo(null);
+        setIconImage(XImage.getAppIcon());
         XDate.showTime(lblDate, "dd/MM/yyyy");
         XDate.showTime(lblClock, "hh:mm:ss a");
         showPanelMenu(pnlemp);

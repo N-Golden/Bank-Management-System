@@ -6,6 +6,7 @@ import com.bmSys.model.AdminModel;
 import com.bmSys.ui.ForgotPass;
 import com.bmSys.ui.Loading;
 import com.bmSys.utils.PasswordUtil;
+import com.bmSys.utils.XImage;
 import java.util.List;
 import javax.swing.JOptionPane;
 /**
@@ -46,6 +47,7 @@ public class Login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("ADMIN LOGIN");
         setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -161,7 +163,7 @@ public class Login extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 153, 255));
         jPanel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bmSys/icon/administrator.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bmSys/icon/manager.png"))); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -183,9 +185,9 @@ public class Login extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(93, Short.MAX_VALUE)
+                .addContainerGap(118, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addGap(43, 43, 43)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1)
                 .addGap(109, 109, 109))
         );
@@ -279,7 +281,8 @@ public class Login extends javax.swing.JFrame {
 
     }
     public void init(){
-        setLocationRelativeTo(null);
+        this.setLocationRelativeTo(null);
+        this.setIconImage(XImage.getAppIcon());
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

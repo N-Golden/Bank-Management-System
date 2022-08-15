@@ -13,6 +13,7 @@ import com.bmSys.utils.MailUtil;
 import com.bmSys.utils.MsgBoxUtil;
 import com.bmSys.utils.PasswordUtil;
 import com.bmSys.utils.Validator;
+import com.bmSys.utils.XImage;
 import javax.swing.JOptionPane;
 
 /**
@@ -321,6 +322,7 @@ public class ForgotPass extends javax.swing.JFrame {
 
     private void init() {
         setLocationRelativeTo(null);
+        setIconImage(XImage.getAppIcon());
         txtCode.setEnabled(false);
         txtPass.setEnabled(false);
         txtPass2.setEnabled(false);

@@ -17,6 +17,7 @@ import com.bmSys.utils.MsgBoxUtil;
 import com.bmSys.utils.PasswordUtil;
 import com.bmSys.utils.Validator;
 import com.bmSys.utils.XDate;
+import com.bmSys.utils.XImage;
 import com.toedter.calendar.JDateChooser;
 import java.awt.Color;
 import java.awt.Image;
@@ -2655,6 +2656,7 @@ public class Home extends javax.swing.JFrame {
     private void init(EmployeeModel model) {
         this.model = model;
         setLocationRelativeTo(null);
+        setIconImage(XImage.getAppIcon());
         XDate.showTime(lblDate, "dd-MM-yyyy");
         XDate.showTime(lblTime, "hh:mm:ss a");
         lblEmployee.setText(model.getId());
