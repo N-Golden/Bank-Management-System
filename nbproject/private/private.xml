@@ -3,10 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Admin/Desktop/final/Bank-Management-System/src/com/bmSys/groupChat/Client.java</file>
-            <file>file:/C:/Users/Admin/Desktop/final/Bank-Management-System/src/com/bmSys/groupChat/GroupChat.java</file>
-            <file>file:/C:/Users/Admin/Desktop/final/Bank-Management-System/src/com/bmSys/dao/AbstractDAO.java</file>
-            <file>file:/C:/Users/Admin/Desktop/final/Bank-Management-System/src/com/bmSys/groupChat/Server.java</file>
+            <file>file:/C:/Users/HT/Desktop/FPT/da1/Bank-Management-System/src/com/bmSys/dao/AbstractDAO.java</file>
+            <file>file:/C:/Users/HT/Desktop/FPT/da1/Bank-Management-System/src/com/bmSys/ui/admin/Login.java</file>
+            <file>file:/C:/Users/HT/Desktop/FPT/da1/Bank-Management-System/src/com/bmSys/utils/XImage.java</file>
+            <file>file:/C:/Users/HT/Desktop/FPT/da1/Bank-Management-System/src/com/bmSys/dao/TransactionDAO.java</file>
+            <file>file:/C:/Users/HT/Desktop/FPT/da1/Bank-Management-System/src/com/bmSys/ui/employee/Login.java</file>
+            <file>file:/C:/Users/HT/Desktop/FPT/da1/Bank-Management-System/src/com/bmSys/ui/ForgotPass.java</file>
         </group>
     </open-files>
 </project-private>
